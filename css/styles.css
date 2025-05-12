@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --var_colorFondoBotones: #205BBA;
+    --var_colorTextoGeneral: white;
+     --var_colorFondo: #2B2E33;
+    --var_textoPequenio:1em;
+    --var_textoMediano:2em;
+    --var_textoGrande:3em;
+}
+
+body{
+    background-color: var(--var_colorFondo);
+    font-family: 'Poppins', sans-serif ;
+    color: var(--var_colorTextoGeneral);
+}
+
+.titulo{
+    font-size: var(--var_textoGrande);
+    font-weight: bold;
+}
+
+.subtitulo{
+    font-size: var(--var_textoMediano);
+    font-weight: bold;
+}
+
+.texto{
+    font-size: var(--var_textoPequenio);
+    font-weight: lighter;
+}
+
+.btn{
+    background-color: var(--var_colorFondoBotones);
+    color: var(--var_colorTextoGeneral);
+    font-size: var(--var_textoPequenio);
+    border: none;
+    text-decoration: none;
+    padding: 0.5em 1em; 
+    border-radius: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    width: fit-content;     
+    max-width: 100%;  
+}
+
+input {
+  flex: 1;
+  padding: 0.5em 1em;
+  font-size: var(--var_textoPequenio);
+  border: none;
+  border-radius: 0.5em;
+  outline: none;
+}
+
+.select {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  max-width: 100%;
+  width: fit-content;
+  cursor: pointer;
+}

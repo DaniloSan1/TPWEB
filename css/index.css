@@ -1,0 +1,28 @@
+.filtros{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor-galeria{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    gap:2em;
+    padding: 1em;
+}
+
+.card_peliculaYserie img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.subtitulo{
+    text-align: center;
+}
+
