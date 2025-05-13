@@ -13,6 +13,7 @@ body{
     background-color: var(--var_colorFondo);
     font-family: 'Poppins', sans-serif ;
     color: var(--var_colorTextoGeneral);
+    margin:0;
 }
 
 .titulo{

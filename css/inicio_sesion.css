@@ -1,0 +1,15 @@
+
+.contenedor_general{
+    display: flex;
+}
+
+.contenedor{
+    width: 50%;
+    border: 2px solid white;
+    height: 100vh;
+}
+
+.tituloInicio{
+    font-size: 1em;
+    text-align: center;
+}
