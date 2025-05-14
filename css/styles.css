@@ -3,6 +3,7 @@
 :root {
     --var_colorFondoBotones: #205BBA;
     --var_colorTextoGeneral: white;
+    --var_colorTextoInputsYSelect: rgb(59, 59, 59);
     --var_colorFondo: #2B2E33;
     --var_textoMasPequenio: 0.5em;
     --var_textoPequenio: 1em;
@@ -32,10 +33,10 @@ body {
 .header_nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
   flex-wrap: wrap;
   gap: 1em;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -104,14 +105,23 @@ body {
     max-width: 100%;
 }
 
-input {
-    flex: 1;
+input , select{
     padding: 0.5em 1em;
-    font-size: var(--var_textoPequenio);
-    border: none;
     border-radius: 0.5em;
-    outline: none;
+    border: none;
+    background-color: var(--var_colorTextoGeneral);
+    font-size: var(--var_textoPequenio);
+    color: var(--var_colorTextoInputsYSelect);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 1em ;
 }
+
+option {
+  background-color: #fff;
+  color: #333;
+}
+
 
 .select {
     padding: 0.5em 1em;
