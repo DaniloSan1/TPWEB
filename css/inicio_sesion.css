@@ -1,15 +1,28 @@
-
-.contenedor_general{
+.contenedor_general {
     display: flex;
-}
-
-.contenedor{
-    width: 50%;
-    border: 2px solid white;
-    height: 100vh;
-}
-
-.tituloInicio{
-    font-size: 1em;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contenedor_imagen {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .image_banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .contenedor_formulario {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .tituloInicio {
     text-align: center;
-}
+    font-size: 1.5em;
+  }
