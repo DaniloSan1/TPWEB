@@ -4,12 +4,14 @@
     --var_colorFondoBotones: #205BBA;
     --var_colorTextoGeneral: white;
     --var_colorFondo: #2B2E33;
+    --var_textoMasPequenio: 0.5em;
     --var_textoPequenio: 1em;
     --var_textoMediano: 2em;
     --var_textoGrande: 3em;
 }
 
 body {
+    min-width: 20rem;
     background-color: var(--var_colorFondo);
     font-family: 'Poppins', sans-serif;
     color: var(--var_colorTextoGeneral);
@@ -18,26 +20,45 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1em;
     background-color: #222429;
     border-bottom: 2px solid var(--var_colorFondoBotones);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    min-width: 10em;
 }
 
-.navegacion .menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.header_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.navegacion .menu li {
+
+.header_img{
+    width: 10%;
+    height: 10%;
+    justify-content: center;
+    align-items:center ;
+}
+
+.header_img {
+  height: 2em;
+  width: auto;
+}
+
+.header_nav .menu li {
     margin: 0 1em;
 }
 
-.navegacion .menu a {
+.header_nav .menu a {
     text-decoration: none;
     color: var(--var_colorTextoGeneral);
     font-size: var(--var_textoPequenio);
@@ -57,6 +78,17 @@ body {
     font-size: var(--var_textoPequenio);
     font-weight: lighter;
 }
+
+
+.menu {
+ display: flex;
+  flex-wrap: wrap; 
+  gap: 1em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 
 .btn {
     background-color: var(--var_colorFondoBotones);
@@ -92,6 +124,11 @@ input {
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
+
+    .header_nav .menu a {
+    font-size: var(--var_textoMasPequenio);
+}
+
     .header {
         flex-direction: column;
         align-items: flex-start;
