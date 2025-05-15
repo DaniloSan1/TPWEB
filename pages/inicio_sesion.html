@@ -15,21 +15,31 @@
 </section>
 
 <section class="contenedor contenedor_formulario" >
-        <h1 class="titulo tituloInicio">Iniciar Sesión</h1>
+    <h1 class="titulo tituloInicio">Iniciar Sesión</h1>
         <div class="formulario">
-            <form method="get">
-                <label for="name">Nombre de usuario:</label>
+            <form method="get" class="contenedorInputs">
+                <div class="hijoUno">
+
+               <label for="name">Nombre de usuario:</label>
                 <input id="name" name="name" type="text" placeholder="usuario" required />
+  
+                </div>
+                <div class="hijoDos">
+   
                 <label for="password"> Contraseña:</label>
-                <input id="password" name= "password" type="password" placeholder="contraseña" required/>
+   
+               <input id="password" name= "password" type="password" placeholder="contraseña" required/>
+                </div>
+   
             </form>
-            <a href="https://miel.unlam.edu.ar/">Ingresar</a>
         </div>
-        <p>
-            <a href="#">Recuperar contraseña</a><br>
-            <a href="#">Registrarse</a>
-          </p>
-        </section>
+            <a class="btnIngreso" href="https://miel.unlam.edu.ar/">Ingresar</a>
+
+    </section>
+    <p>
+        <a href="#">Recuperar contraseña</a><br>
+        <a href="#">Registrarse</a>
+      </p>
  
 </body>
 </html>

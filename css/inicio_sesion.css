@@ -20,9 +20,58 @@
     max-width: 500px;
     padding: 20px;
     box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "titulo titulo"
+                        "usuario usuario"
+                        "btn btn";
+
+
+
+    border: 1px solid red;
+
+    align-items: center;
+    justify-content: center;
   }
-  
-  .tituloInicio {
+
+   .tituloInicio {
     text-align: center;
     font-size: 1.5em;
+    grid-area: titulo;
+  }
+
+  .contenedorInputs{
+    display: flex;
+    grid-area: usuario;
+    border: 1px rebeccapurple solid;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hijoUno{
+    display: flex;
+
+    border: 1px solid blue;
+    justify-content: space-between;
+  }
+  
+  .hijoDos{
+    display: flex;
+    border: 1px solid greenyellow; 
+    justify-content: space-between;
+
+   }
+  
+ 
+
+  .btnIngreso{
+    grid-area: btn;
+    background: red;
+    border-radius: .5rem;
+    padding: .5rem;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;  
+    width: 40%;
+    text-align: center;
+    display: grid;
   }
