@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color: grey;
+    height: 100vh;
   }
   
   .contenedor_imagen {
@@ -10,58 +13,59 @@
   }
   
   .image_banner {
+    top: 0;
+    z-index: 0;
     width: 100%;
-    height: 100%;
+    height: 30vh;
     object-fit: cover;
+    position: absolute;
+
   }
   
   .contenedor_formulario {
+    z-index: 1;
+    background-color: white;
     width: 100%;
     max-width: 500px;
     padding: 20px;
     box-sizing: border-box;
     display: grid;
     grid-template-areas: "titulo titulo"
-                        "usuario usuario"
+                        "labelUsuario inputUsuario"
+                        "labelContraseña inputContraseña"
                         "btn btn";
+                        gap: 10px;
 
 
-
-    border: 1px solid red;
 
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
    .tituloInicio {
     text-align: center;
     font-size: 1.5em;
     grid-area: titulo;
+    color: black;
   }
 
-  .contenedorInputs{
-    display: flex;
-    grid-area: usuario;
-    border: 1px rebeccapurple solid;
-    flex-direction: column;
-    width: 100%;
-  }
+  label[for="name"] {
+grid-area: labelUsuario;
+align-self: center;
+color: black;
+ }
 
-  .hijoUno{
-    display: flex;
+   label[for="password"] {
+grid-area: labelContraseña;
+align-self: center;
+color: black;
+ }
 
-    border: 1px solid blue;
-    justify-content: space-between;
-  }
-  
-  .hijoDos{
-    display: flex;
-    border: 1px solid greenyellow; 
-    justify-content: space-between;
-
+input#name, input#password{
+border: 1px solid black;
    }
-  
- 
 
   .btnIngreso{
     grid-area: btn;
@@ -71,7 +75,16 @@
     text-decoration: none;
     color: white;
     border: 1px solid white;  
-    width: 40%;
+    
     text-align: center;
-    display: grid;
+    cursor: pointer;
+
+  }
+
+  .btnIngreso:hover{
+    background: #0056b3;
+  }
+
+  .etiquetasInicio {
+    text-align: center;
   }
