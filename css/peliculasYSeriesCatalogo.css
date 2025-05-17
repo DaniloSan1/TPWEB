@@ -1,0 +1,58 @@
+.filtros {
+  display: flex;
+  flex-direction: row; 
+  gap: 1em;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.filtro_categoria,
+.buscador {
+  width: 100%;
+}
+
+.contenedor-galeria{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    gap:2em;
+    padding: 1em;
+}
+
+.card_peliculaYserie img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.subtitulo{
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .contenedor-galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .contenedor-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .filtros {
+    
+      flex-direction: column; 
+      }
+    }
+@media (max-width: 600px) {
+    .contenedor-galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+
