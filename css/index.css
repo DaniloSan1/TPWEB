@@ -1,9 +1,16 @@
 .filtros {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1em;
+  display: flex;
+  flex-direction: row; 
+  gap: 1em;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.filtro_categoria,
+.buscador {
+  width: 100%;
 }
 
 .contenedor-galeria{
@@ -37,10 +44,15 @@
     .contenedor-galeria {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
+    .filtros {
+    
+      flex-direction: column; 
+      }
+    }
 @media (max-width: 600px) {
     .contenedor-galeria {
         grid-template-columns: 1fr;
     }
 }
+
+
