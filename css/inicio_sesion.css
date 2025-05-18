@@ -3,16 +3,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: grey;
     height: 100vh;
   }
   
   .contenedor_imagen {
     width: 100%;
-    height: 250px;
+    height: 20%;
   }
   
   .image_banner {
+    min-width: 20rem;
     top: 0;
     z-index: 0;
     width: 100%;
@@ -23,10 +23,11 @@
   }
   
   .contenedor_formulario {
+    margin: auto;
     z-index: 1;
-    background-color: white;
-    width: 100%;
-    max-width: 500px;
+    width: 90%;
+    min-width: fit-content;
+    max-width: 30em;
     padding: 20px;
     box-sizing: border-box;
     display: grid;
@@ -34,33 +35,30 @@
                         "labelUsuario inputUsuario"
                         "labelContraseña inputContraseña"
                         "btn btn";
-                        gap: 10px;
+                        gap: 0.5em;
 
 
 
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
    .tituloInicio {
     text-align: center;
-    font-size: 1.5em;
     grid-area: titulo;
-    color: black;
   }
 
   label[for="name"] {
 grid-area: labelUsuario;
 align-self: center;
-color: black;
+
  }
 
    label[for="password"] {
 grid-area: labelContraseña;
 align-self: center;
-color: black;
+
  }
 
 input#name, input#password{
@@ -69,20 +67,12 @@ border: 1px solid black;
 
   .btnIngreso{
     grid-area: btn;
-    background: red;
-    border-radius: .5rem;
-    padding: .5rem;
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;  
-    
-    text-align: center;
-    cursor: pointer;
+
 
   }
 
   .btnIngreso:hover{
-    background: #0056b3;
+    background: #02366d;
   }
 
   .etiquetasInicio {
