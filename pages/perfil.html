@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <title>Perfil</title>
+</head>
+<body class="contenedor_general">
+    <header class="header">
+        <nav class="header_nav">
+            <a href="../index.html" class="logo">
+                <img class="header_img" src="../assets/icons/N_azul_205BBA.png" alt="">
+            </a>
+
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./pages/peliculasCatalogo.html">Películas</a></li>
+                <li><a href="./pages/seriesCatalogo.html">Series</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contenedor contenedor_imagenPerfil">
+        <img class="fotoPerfil_img" src="../assets/img/img_perfil.jpg" width=300px  alt="">
+    </section>
+    <section class="contenedor contenedor_datosUsuario">
+        <form class="formulario_perfil">
+            <label for="mail"> E-mail: usuario@gmail.com</label>
+            <br>
+            <label for="contraseña">Contraseña: ********</label>
+            <br>
+            <label for="password">Nueva contraseña:</label>            
+            <input id="password" name="password" type="password" placeholder="Ingrese nueva contraseña" required />
+            <br>
+            <label for="password">Repetir nueva contraseña:</label>            
+            <input id="password" name="password" type="password" placeholder="Repetir contraseña" required />
+        </form>
+    </section>
+
+    <section class="contenedor contenedor_medioDePago">
+        <div class="tarjeta_credito">
+            <input id="card" name="opcion" type="radio" value="Tarjeta de credito" />
+            <label for="card">Tarjeta de credito</label>
+            <br>
+            <input id="datos_tarjeta" name="datos_tarjeta" type="text" placeholder="Numero de tarjeta" required>
+            <input id="datos_tarjeta" name="datos_tarjeta" type="text" placeholder="XXX" required>
+            <br>
+            <input id="cupon" name="opcion" type="radio" value="Cupon de pago" />
+            <label for="cupon">Cupon de pago</label>
+            <br>
+            <label for="rapipago">RapiPago</label>
+            <input id="rapipago" type="checkbox">
+            <label for="pago_facil">Pago Facil </label>
+            <input id="pago_facil" type="checkbox">
+            <br>
+            <input id="transferencia" name="opcion" type="radio" value="Transferencia bancaria" />
+            <label for="transferencia">Transferencia bancaria</label>
+            <p>CBU: 0072585257854785920</p>
+        </div>
+    </section>
+</body>
+</html>
