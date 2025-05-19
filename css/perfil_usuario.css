@@ -10,27 +10,27 @@
 .section_foto,
 .section_usuario,
 .section_pago {
-  width: calc(100vw/4);
+  width: calc(100vw / 4);
   height: 80%;
 }
 
+.grupo_form_usuario,
+.grupo_form_pago {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+  gap: 0.5em;
+}
 
-  .grupo_form_usuario, .grupo_form_pago{
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 2em;
-gap: 0.5em;
-  }
-  
-.section_foto, .section_pago, .section_usuario {
+.section_foto,
+.section_pago,
+.section_usuario {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 
 .perfil_img {
   border-radius: 50%;
@@ -38,19 +38,45 @@ gap: 0.5em;
   width: auto;
 }
 
-
-
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .contenedor_principal {
     flex-direction: column;
-    align-items: center;
+    height: auto;
+    padding: 1em;
   }
 
   .section_foto,
   .section_usuario,
   .section_pago {
-    width: 80vw;
+    width: 100%;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2em;
+  }
+
+  .section_pago {
+    margin-bottom: 0;
+  }
+
+  .perfil_img {
+    height: 8em;
+    width: auto;
+  }
+
+  /* Aquí arreglamos que los labels e inputs no se junten */
+  .grupo_form_usuario,
+  .grupo_form_pago {
+    flex-direction: column; /* apilar verticalmente */
+    align-items: flex-start; /* alinear a la izquierda */
+    gap: 0.5em; /* espacio entre label e input */
+  }
+
+  .grupo_form_usuario label,
+  .grupo_form_pago label {
+    width: 100%; /* que el label ocupe todo el ancho */
+  }
+
+  .grupo_form_usuario input,
+  .grupo_form_pago input {
+    width: 100%; /* inputs a full ancho también */
   }
 }
