@@ -11,6 +11,10 @@
     --var_textoGrande: 3em;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     min-width: 20rem;
     background-color: var(--var_colorFondo);
@@ -104,6 +108,9 @@ body {
     width: fit-content;
     max-width: 100%;
     margin: 0.5em;
+}
+.btn:hover{
+    background-color: #0143ad;
 }
 
 input , select{
