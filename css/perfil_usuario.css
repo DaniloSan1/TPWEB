@@ -12,22 +12,33 @@
 .section_pago {
   width: calc(100vw/4);
   height: 80%;
-  border: 2px solid black;
 }
 
 
-.section_foto {
+  .grupo_form_usuario, .grupo_form_pago{
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 2em;
+gap: 0.5em;
+  }
+  
+.section_foto, .section_pago, .section_usuario {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+
 .perfil_img {
   border-radius: 50%;
   height: 50%;
   width: auto;
 }
+
+
 
 @media (max-width: 768px) {
   .contenedor_principal {
