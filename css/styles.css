@@ -3,8 +3,8 @@
 :root {
     --var_colorFondoBotones: #205BBA;
     --var_colorTextoGeneral: white;
-    --var-colorHoverOscuro:#0143ad;
-      --var_colorHoverClaro: #246ee6;
+    --var-colorHoverOscuro: #0143ad;
+    --var_colorHoverClaro: #246ee6;
     --var_colorTextoInputsYSelect: rgb(59, 59, 59);
     --var_colorFondo: #2B2E33;
     --var_textoMasPequenio: 0.5em;
@@ -13,7 +13,7 @@
     --var_textoGrande: 3em;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -34,24 +34,24 @@ body {
 }
 
 .header_nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .header_img {
-  height: 2em;
-  width: auto;
+    height: 2em;
+    width: auto;
 }
 
 .menu {
- display: flex;
-  flex-wrap: wrap; 
-  gap: 1em;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .header_nav .menu li {
@@ -68,7 +68,8 @@ body {
     color: var(--var_colorHoverClaro);
 }
 
-.titulo, .subtitulo {
+.titulo,
+.subtitulo {
     font-weight: bold;
 }
 
@@ -101,11 +102,12 @@ body {
     margin: 0.5em;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #0143ad;
 }
 
-input , select{
+input,
+select {
     padding: 0.5em 1em;
     border-radius: 0.5em;
     border: none;
@@ -117,9 +119,9 @@ input , select{
 }
 
 option {
-  background-color: #fff;
-  color: #333;
-  margin: 0.5;
+    background-color: #fff;
+    color: #333;
+    margin: 0.5;
 }
 
 
@@ -136,8 +138,8 @@ option {
 @media (max-width: 768px) {
 
     .header_nav .menu a {
-    font-size: var(--var_textoMasPequenio);
-}
+        font-size: var(--var_textoMasPequenio);
+    }
 
     .header {
         flex-direction: column;
