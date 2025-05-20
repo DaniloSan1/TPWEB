@@ -44,7 +44,12 @@
     align-items: center;
     flex-wrap: wrap;
 }
-
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em;
+}
 .similares {
     margin-top: 2em;
     text-align: center;
