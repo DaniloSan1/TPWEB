@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/inicio_sesion.css">
-    <link rel="icon" href="../TPWEB/assets/icons/N_azul_205BBA.png" type="image/x-icon">
+    <link rel="icon" href="./assets/icons/N_azul_205BBA.png" type="image/x-icon">
     <title>Inicio de Sesion</title>
 </head>
 
@@ -17,12 +17,12 @@
 
             <h1 class="titulo">Inicio Sesion</h1>
 
-            <form class="form_contenedor" action="">
-                <input type="text" placeholder="Usuario">
-                <input type="password" placeholder="Contraseña">
+            <form class="form_contenedor" action="./pages/home.html">
+                <input type="text" placeholder="Usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn">Iniciar Sesion</button>
             </form>
-            <a href="./pages/home.html" class="btn">Iniciar Sesion</a>
-
+    
             <div class="etiquetasInicio">
                 <a class="link" href="pages/recu_contra.html">Recuperar contraseña</a><br>
                 <a class="link" href="pages/registro_usuario.html">Registrarse</a>
