@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +9,13 @@
   <link rel="icon" href="../assets/icons/N_azul_205BBA.png" type="image/x-icon">
   <title>Registrarse</title>
 </head>
+
 <body>
+
   <div class="contenedor_principal">
     <h1 class="titulo titulo_registro">Registrarse</h1>
     <section class="section_usuario">
+
       <form action="../pages/home.html" method="post" class="form_usuario">
         <div class="grupo_form_usuario">
           <label for="nombre">Nombre</label>
@@ -40,42 +44,58 @@
 
         <div class="grupo_form_usuario">
           <label for="repetir_contrasena">Repetir contraseña</label>
-          <input type="password" id="repetir_contrasena" name="repetir_contrasena" placeholder="Ingrese nueva contraseña" required />
+          <input type="password" id="repetir_contrasena" name="repetir_contrasena"
+            placeholder="Ingrese nueva contraseña" required />
         </div>
+
     </section>
 
     <section class="section_pago">
       <h3>Método de pago</h3>
-      <input type="radio" id="pago_tarjeta" name="pago" value="tarjeta" required>
+
+      <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta" required>
       <label for="pago_tarjeta">Tarjeta de crédito</label>
 
       <div class="grupo_form_pago">
+
         <label for="numero_tarjeta">Número de tarjeta</label>
         <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="Número Tarjeta">
+
         <label for="codigo_tarjeta">Código de seguridad</label>
         <input type="text" id="codigo_tarjeta" name="codigo_tarjeta" placeholder="XXX">
+
       </div>
 
       <input type="radio" id="pago_cupon" name="metodo_pago" value="cupon">
       <label for="pago_cupon">Cupón de pago</label>
 
       <div class="grupo_form_pago">
-        <label for="pago_facil">Pago fácil</label>
-        <input type="checkbox" id="pago_facil" name="cupones[]" value="PagoFacil">
-        <label for="rapipago">RapiPago</label>
-        <input type="checkbox" id="rapipago" name="cupones[]" value="RapiPago">
-      </div>
 
-      <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia">
+        <div class="check-label-wrapper">
+           <label for="pago_facil">Pago fácil</label>
+          <input type="checkbox" id="pago_facil" name="cupones[]" value="PagoFacil">
+         
+        </div>
+
+        <div class="check-label-wrapper">
+          <label for="rapipago">RapiPago</label>
+          <input type="checkbox" id="rapipago" name="cupones[]" value="RapiPago">
+
+        </div>
+      </div>
       <label for="pago_transferencia">Transferencia bancaria</label>
+      <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia">
+
       <p>CBU : 2183909411100018971375</p>
 
       <div class="grupo">
         <button class="btn" type="submit">Confirmar</button>
         <a class="btn" href="../index.html">Cancelar</a>
       </div>
+
+      </form>
     </section>
-    </form>
   </div>
 </body>
+
 </html>
