@@ -53,6 +53,12 @@
     <section class="section_pago">
       <h3>Método de pago</h3>
 
+    
+      <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia" required>
+  <label for="pago_transferencia">Transferencia</label>
+
+        <p>CBU : 2183909411100018971375</p>
+
       <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta" required>
       <label for="pago_tarjeta">Tarjeta de crédito</label>
 
@@ -72,22 +78,17 @@
       <div class="grupo_form_pago">
 
         <div class="check-label-wrapper">
-           <label for="pago_facil">Pago fácil</label>
-          <input type="checkbox" id="pago_facil" name="cupones[]" value="PagoFacil">
-         
+          <label for="pago_facil">Pago fácil</label>
+          <input type="checkbox" id="pago_facil" name="cupones" value="PagoFacil">
+
         </div>
 
         <div class="check-label-wrapper">
           <label for="rapipago">RapiPago</label>
-          <input type="checkbox" id="rapipago" name="cupones[]" value="RapiPago">
-
+          <input type="checkbox" id="rapipago" name="cupones" value="RapiPago">
         </div>
+
       </div>
-      <label for="pago_transferencia">Transferencia bancaria</label>
-      <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia">
-
-      <p>CBU : 2183909411100018971375</p>
-
       <div class="grupo">
         <button class="btn" type="submit">Confirmar</button>
         <a class="btn" href="../index.html">Cancelar</a>
