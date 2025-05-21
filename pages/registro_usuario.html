@@ -12,25 +12,25 @@
     <div class="contenedor_principal">
       <h1 class="titulo titulo_registro">Registrarse</h1>
       <section class="section_usuario">
-        <form action="#" method="post" class="form_usuario">
+        <form action="home.html" method="post" class="form_usuario">
           <div class="grupo_form_usuario">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Nombre" />
+            <input type="text" id="nombre" placeholder="Nombre" required />
           </div>
 
           <div class="grupo_form_usuario">
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" placeholder="Apellido" />
+            <input type="text" id="apellido" placeholder="Apellido" required />
           </div>
 
           <div class="grupo_form_usuario">
             <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" placeholder="Usuario" />
+            <input type="text" id="usuario" placeholder="Usuario" required />
           </div>
 
           <div class="grupo_form_usuario">
             <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="usuario@gmail.com" />
+            <input type="email" id="email" placeholder="usuario@gmail.com" required />
           </div>
 
           <div class="grupo_form_usuario">
@@ -39,6 +39,7 @@
               type="password"
               id="contrasenia_actual"
               placeholder="**********"
+              required
             />
           </div>
 
@@ -48,44 +49,45 @@
               type="password"
               id="repetir_contrasenia"
               placeholder="Ingrese nueva contraseña"
+              required
             />
           </div>
         </form>
       </section>
 
       <section class="section_pago">
-        <form action="#" method="post" class="form_pago">
+        <form action="home.html" method="post" class="form_pago">
           <h3>Método de pago</h3>
 
           <label
-            ><input type="radio" name="pago" value="tarjeta" /> Tarjeta de
+            ><input type="radio" name="pago" value="tarjeta" required /> Tarjeta de
             crédito</label
           >
           <div class="grupo_form_pago">
-            <input type="text" placeholder="Número de tarjeta" />
-            <input type="text" placeholder="XXX" />
+            <input type="text" placeholder="Número de tarjeta" required />
+            <input type="text" placeholder="XXX" required />
           </div>
 
           <label
-            ><input type="radio" name="pago" value="cupon" /> Cupón de
+            ><input type="radio" name="pago" value="cupon" required /> Cupón de
             pago</label
           >
           <div class="grupo_form_pago">
             <label
-              ><input type="checkbox" name="pago_cupon" /> Pago fácil</label
+              ><input type="checkbox" name="pago_cupon" required /> Pago fácil</label
             >
-            <label><input type="checkbox" name="pago_cupon" /> RapiPago</label>
+            <label><input type="checkbox" name="pago_cupon" required /> RapiPago</label>
           </div>
 
           <label
-            ><input type="radio" name="pago" value="transferencia" />
+            ><input type="radio" name="pago" value="transferencia" required />
             Transferencia bancaria</label
           >
           <p>CBU : 2183909411100018971375</p>
 
           <div class="grupo_form_pago">
-            <a href="./home.html" class="btn btn_guardar">Confirmar</a>
-            <a href="../index.html" class="btn btn_cancelar">Cancelar</a>
+            <button class="btn" type="submit">Confirmar</button>
+            <button class="btn" type="submit">Cancelar</button>
           </div>
         </form>
       </section>
