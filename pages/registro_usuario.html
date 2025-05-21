@@ -1,96 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/registro_usuario.css" />
-    <link rel="icon" href="../assets/icons/N_azul_205BBA.png" type="image/x-icon">
-    <title>Registrarse</title>
-  </head>
-  <body>
-    <div class="contenedor_principal">
-      <h1 class="titulo titulo_registro">Registrarse</h1>
-      <section class="section_usuario">
-        <form action="home.html" method="post" class="form_usuario">
-          <div class="grupo_form_usuario">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Nombre" required />
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/registro_usuario.css" />
+  <link rel="icon" href="../assets/icons/N_azul_205BBA.png" type="image/x-icon">
+  <title>Registrarse</title>
+</head>
+<body>
+  <div class="contenedor_principal">
+    <h1 class="titulo titulo_registro">Registrarse</h1>
+    <section class="section_usuario">
+      <form action="../pages/home.html" method="post" class="form_usuario">
+        <div class="grupo_form_usuario">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" placeholder="Apellido" required />
-          </div>
+        <div class="grupo_form_usuario">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" placeholder="Usuario" required />
-          </div>
+        <div class="grupo_form_usuario">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario" required />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="usuario@gmail.com" required />
-          </div>
+        <div class="grupo_form_usuario">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="usuario@dominio.com" required />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="contrasenia_actual">Contraseña</label>
-            <input
-              type="password"
-              id="contrasenia_actual"
-              placeholder="**********"
-              required
-            />
-          </div>
+        <div class="grupo_form_usuario">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="**********" required />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="repetir_contrasenia">Repetir contraseña</label>
-            <input
-              type="password"
-              id="repetir_contrasenia"
-              placeholder="Ingrese nueva contraseña"
-              required
-            />
-          </div>
-        </form>
-      </section>
+        <div class="grupo_form_usuario">
+          <label for="repetir_contrasena">Repetir contraseña</label>
+          <input type="password" id="repetir_contrasena" name="repetir_contrasena" placeholder="Ingrese nueva contraseña" required />
+        </div>
+    </section>
 
-      <section class="section_pago">
-        <form action="home.html" method="post" class="form_pago">
-          <h3>Método de pago</h3>
+    <section class="section_pago">
+      <h3>Método de pago</h3>
+      <input type="radio" id="pago_tarjeta" name="pago" value="tarjeta" required>
+      <label for="pago_tarjeta">Tarjeta de crédito</label>
 
-          <label
-            ><input type="radio" name="pago" value="tarjeta" required /> Tarjeta de
-            crédito</label
-          >
-          <div class="grupo_form_pago">
-            <input type="text" placeholder="Número de tarjeta" required />
-            <input type="text" placeholder="XXX" required />
-          </div>
+      <div class="grupo_form_pago">
+        <label for="numero_tarjeta">Número de tarjeta</label>
+        <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="Número Tarjeta">
+        <label for="codigo_tarjeta">Código de seguridad</label>
+        <input type="text" id="codigo_tarjeta" name="codigo_tarjeta" placeholder="XXX">
+      </div>
 
-          <label
-            ><input type="radio" name="pago" value="cupon" required /> Cupón de
-            pago</label
-          >
-          <div class="grupo_form_pago">
-            <label
-              ><input type="checkbox" name="pago_cupon" required /> Pago fácil</label
-            >
-            <label><input type="checkbox" name="pago_cupon" required /> RapiPago</label>
-          </div>
+      <input type="radio" id="pago_cupon" name="metodo_pago" value="cupon">
+      <label for="pago_cupon">Cupón de pago</label>
 
-          <label
-            ><input type="radio" name="pago" value="transferencia" required />
-            Transferencia bancaria</label
-          >
-          <p>CBU : 2183909411100018971375</p>
+      <div class="grupo_form_pago">
+        <label for="pago_facil">Pago fácil</label>
+        <input type="checkbox" id="pago_facil" name="cupones[]" value="PagoFacil">
+        <label for="rapipago">RapiPago</label>
+        <input type="checkbox" id="rapipago" name="cupones[]" value="RapiPago">
+      </div>
 
-          <div class="grupo_form_pago">
-            <button class="btn" type="submit">Confirmar</button>
-            <button class="btn" type="submit">Cancelar</button>
-          </div>
-        </form>
-      </section>
-    </div>
-  </body>
+      <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia">
+      <label for="pago_transferencia">Transferencia bancaria</label>
+      <p>CBU : 2183909411100018971375</p>
+
+      <div class="grupo">
+        <button class="btn" type="submit">Confirmar</button>
+        <a class="btn" href="../index.html">Cancelar</a>
+      </div>
+    </section>
+    </form>
+  </div>
+</body>
 </html>

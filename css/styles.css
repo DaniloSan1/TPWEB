@@ -86,20 +86,23 @@ body {
     font-weight: lighter;
 }
 
-
 .btn {
     background-color: var(--var_colorFondoBotones);
     color: var(--var_colorTextoGeneral);
     font-size: var(--var_textoPequenio);
     border: none;
-    text-decoration: none;
+    text-decoration: none; 
     padding: 0.5em 1em;
     border-radius: 0.5em;
     cursor: pointer;
     display: inline-block;
     width: fit-content;
     max-width: 20em;
-    margin: 0.5em;
+    margin: auto;
+}
+
+button {
+    all: unset; 
 }
 
 .btn:hover {
