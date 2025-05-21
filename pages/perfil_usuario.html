@@ -1,123 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/perfil_usuario.css" />
-    <link
-      rel="icon"
-      href="../assets/icons/N_azul_205BBA.png"
-      type="image/x-icon"
-    />
-    <title>Perfil</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <nav class="header_nav">
-        <a href="./home.html" class="logo">
-          <img
-            class="header_img"
-            src="../assets/icons/N_azul_205BBA.png"
-            alt=""
-          />
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/perfil_usuario.css" />
+  <link rel="icon" href="../assets/icons/N_azul_205BBA.png" type="image/x-icon" />
+  <title>Perfil</title>
+</head>
 
-        <ul class="menu">
-          <li><a href="./home.html">Inicio</a></li>
-          <li><a href="../pages/peliculasCatalogo.html">Películas</a></li>
-          <li><a href="../pages/seriesCatalogo.html">Series</a></li>
-          <li><a href="../pages/perfil_usuario.html">Perfil</a></li>
-        </ul>
-      </nav>
-    </header>
+<body>
+  <header class="header">
+    <nav class="header_nav">
+      <a href="./home.html" class="logo">
+        <img class="header_img" src="../assets/icons/N_azul_205BBA.png" alt="" />
+      </a>
 
-    <div class="contenedor_principal">
-      <section class="section_foto">
-        <img class="perfil_img" src="../assets/img/img_perfil.jpg" alt="" />
-        <h2 class="texto">Usuario</h2>
-      </section>
+      <ul class="menu">
+        <li><a href="./home.html">Inicio</a></li>
+        <li><a href="../pages/peliculasCatalogo.html">Películas</a></li>
+        <li><a href="../pages/seriesCatalogo.html">Series</a></li>
+        <li><a href="../pages/perfil_usuario.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <section class="section_usuario">
-        <form action="#" method="post" class="form_usuario">
-          <div class="grupo_form_usuario">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" value="usuario@gmail.com" disabled />
-          </div>
+  <div class="contenedor_principal">
+    <section class="section_foto">
+      <img class="perfil_img" src="../assets/img/img_perfil.jpg" alt="" />
+      <h2 class="texto">Usuario</h2>
+    </section>
 
-          <div class="grupo_form_usuario">
-            <label for="contrasenia_actual">Contraseña</label>
-            <input
-              type="password"
-              id="contrasenia_actual"
-              value="**********"
-              disabled
-            />
-          </div>
+    <section class="section_usuario">
+      <form action="../pages/perfil_usuario.html" method="submit" class="form_usuario">
+        <div class="grupo_form_usuario">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" value="usuario@gmail.com" disabled />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="nueva_contrasenia">Nueva contraseña</label>
-            <input
-              type="password"
-              id="nueva_contrasenia"
-              placeholder="Ingrese nueva contraseña"
-            />
-          </div>
+        <div class="grupo_form_usuario">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="**********" disabled />
+        </div>
 
-          <div class="grupo_form_usuario">
-            <label for="repetir_contrasenia">Repetir contraseña</label>
-            <input
-              type="password"
-              id="repetir_contrasenia"
-              placeholder="Ingrese nueva contraseña"
-            />
-          </div>
-        </form>
-      </section>
+        <div class="grupo_form_usuario">
+          <label for="nueva_contrasena">Nueva contraseña</label>
+          <input type="password" id="nueva_contrasena" name="nueva_contrasena" placeholder="Ingrese nueva contraseña"
+            required />
+        </div>
 
-      <section class="section_pago">
-        <form action="#" method="post" class="form_pago">
-          <h3>Método de pago</h3>
+        <div class="grupo_form_usuario">
+          <label for="repetir_contrasena">Repetir contraseña</label>
+          <input type="password" id="repetir_contrasena" name="repetir_contrasena"
+            placeholder="Ingrese nueva contraseña" required />
+        </div>
+      
+    </section>
 
-          <label
-            ><input type="radio" name="pago" value="tarjeta" /> Tarjeta de
-            crédito</label
-          >
-          <div class="grupo_form_pago">
-            <input type="text" placeholder="Número de tarjeta" />
-            <input type="text" placeholder="XXX" />
-          </div>
+    <section class="section_pago">
 
-          <label
-            ><input type="radio" name="pago" value="cupon" /> Cupón de
-            pago</label
-          >
-          <div class="grupo_form_pago">
-            <label
-              ><input type="checkbox" name="pago_cupon" /> Pago fácil</label
-            >
-            <label><input type="checkbox" name="pago_cupon" /> RapiPago</label>
-          </div>
+      <h3>Método de pago</h3>
 
-          <label
-            ><input type="radio" name="pago" value="transferencia" />
-            Transferencia bancaria</label
-          >
-          <p>CBU : 2183909411100018971375</p>
 
-          <div class="grupo_form_pago">
-            <a href="./home.html" class="btn btn_guardar">Guardar cambios</a>
-            <a href="../index.html" class="btn btn_cancelar"
-              >Cancelar suscripción</a
-            >
+      <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia" required>
+      <label for="pago_transferencia">Transferencia</label>
 
-            <a href="../index.html" class="btn btn_cancelar"
-              >Cerrar Sesion</a
-            >
-          </div>
-        </form>
-      </section>
-    </div>
-  </body>
+      <p>CBU : 2183909411100018971375</p>
+
+
+      <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta" required>
+      <label for="pago_tarjeta">Tarjeta de crédito</label>
+      <div class="grupo_form_pago">
+
+        <label for="numero_tarjeta"></label>
+        <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="Número Tarjeta">
+
+        <label for="codigo_tarjeta"></label>
+        <input type="text" id="codigo_tarjeta" name="codigo_tarjeta" placeholder="XXX">
+
+      </div>
+
+      <input type="radio" id="pago_cupon" name="metodo_pago" value="cupon">
+      <label for="pago_cupon">Cupón de pago</label>
+
+
+      <div class="check-label-wrapper">
+        <label for="pago_facil">Pago fácil</label>
+        <input type="checkbox" id="pago_facil" name="cupones" value="PagoFacil">
+
+      </div>
+
+      <div class="check-label-wrapper">
+        <label for="rapipago">RapiPago</label>
+        <input type="checkbox" id="rapipago" name="cupones" value="RapiPago">
+      </div>
+
+
+
+      <div class="grupo_form_pago">
+
+        <button  type="submit" class="btn btn_guardar">Guardar cambios</button>
+        <a href="../index.html" class="btn btn_cancelar">Cancelar suscripción</a>
+
+      </div>
+    </section>
+    </form>
+  </div>
+</body>
+
 </html>
