@@ -54,6 +54,10 @@
     margin-top: 2em;
     text-align: center;
 }
+.card_peliculaYserie{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
 .similares .contenedor-galeria {
     display: flex;
@@ -62,13 +66,36 @@
     flex-wrap: nowrap;
     overflow-x: auto;
 }
-
+.animacion{
+    opacity: 1;
+}
 .similares .contenedor-galeria img {
     width: auto;
     max-width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 0.5em;
+}
+.carrousel-indicador{
+    display: flex;
+    justify-content: center;
+    gap: 0.7em;
+    margin-top: 1em;
+}
+.btn-indicador{
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 50%;
+    border: none;
+    background: #888;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: background 0.2s, opasity 0.2s;
+    padding: 0;
+}
+.btn-indicador.activo{
+    background: var(--var_colorFondoBotones, #205BBA);
+    opacity: 1;
 }
 
 @media (max-width: 1065px) {
