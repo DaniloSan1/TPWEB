@@ -1,0 +1,120 @@
+{
+  "arcane": {
+    "trailer": "https://www.youtube.com/embed/fXmAurh012s",
+    "titulo": "Arcane",
+    "genero": "Animación, Acción, Ciencia Ficción",
+    "actores": [
+      { "nombre": "Hailee Steinfeld", "enlace": "https://es.wikipedia.org/wiki/Hailee_Steinfeld" },
+      { "nombre": "Ella Purnell", "enlace": "https://es.wikipedia.org/wiki/Ella_Purnell" },
+      { "nombre": "Kevin Alejandro", "enlace": "https://es.wikipedia.org/wiki/Kevin_Alejandro" }
+    ],
+    "temporadas": {
+      "Temporada 1": {
+        "capitulos": [
+          "Capítulo 1", "Capítulo 2", "Capítulo 3",
+          "Capítulo 4", "Capítulo 5", "Capítulo 6",
+          "Capítulo 7", "Capítulo 8", "Capítulo 9"
+        ]
+      }
+    },
+    "descripcion": "Arcane explora los orígenes de los campeones de League of Legends en las ciudades enfrentadas de Piltover y Zaun."
+  },
+
+  "envidiosa": {
+    "trailer": "https://www.youtube.com/embed/mTgIk6iTjbI?si=Ae5QRjLyT1JeiLMQ",
+    "titulo": "Envidiosa",
+    "genero": "Drama, Suspenso",
+    "actores": [
+      { "nombre": "Actor 1", "enlace": "URL_ACTOR_1" },
+      { "nombre": "Actor 2", "enlace": "URL_ACTOR_2" },
+      { "nombre": "Actor 3", "enlace": "URL_ACTOR_3" }
+    ],
+    "temporadas": {
+      "Temporada 1": { "capitulos": ["Capítulo 1", "Capítulo 2", "Capítulo 3", "Capítulo 4"] },
+      "Temporada 2": { "capitulos": ["Capítulo 1", "Capítulo 2", "Capítulo 3", "Capítulo 4", "Capítulo 5"] }
+    },
+    "descripcion": "Rivalidades, secretos y ambición se entrelazan en un juego peligroso de poder y engaño."
+  },
+
+  "el_eternauta": {
+    "trailer": "https://www.youtube.com/embed/ykLTd5aTa88?si=kBPjLiNDr5IFt3Yu",
+    "titulo": "El Eternauta",
+    "genero": "Ciencia Ficción, Aventura",
+    "actores": [
+      { "nombre": "Actor 1", "enlace": "URL_ACTOR_1" },
+      { "nombre": "Actor 2", "enlace": "URL_ACTOR_2" },
+      { "nombre": "Actor 3", "enlace": "URL_ACTOR_3" }
+    ],
+    "temporadas": {
+      "Temporada 1": {
+        "capitulos": [
+          "Capítulo 1", "Capítulo 2", "Capítulo 3",
+          "Capítulo 4", "Capítulo 5", "Capítulo 6",
+          "Capítulo 7", "Capítulo 8"
+        ]
+      }
+    },
+    "descripcion": "Adaptación de la historieta argentina: una nevada mortal marca el inicio de la lucha por la supervivencia."
+  },
+
+  "the_good_place": {
+    "trailer": "https://www.youtube.com/embed/RfBgT5djaQw",
+    "titulo": "The Good Place",
+    "genero": "Comedia, Fantasía",
+    "actores": [
+      { "nombre": "Kristen Bell", "enlace": "https://es.wikipedia.org/wiki/Kristen_Bell" },
+      { "nombre": "Ted Danson", "enlace": "https://es.wikipedia.org/wiki/Ted_Danson" },
+      { "nombre": "William Jackson Harper", "enlace": "https://es.wikipedia.org/wiki/William_Jackson_Harper" }
+    ],
+    "temporadas": {
+      "Temporada 1": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 13" ] },
+      "Temporada 2": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 13" ] },
+      "Temporada 3": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 12" ] },
+      "Temporada 4": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 14" ] }
+    },
+    "descripcion": "Eleanor llega al 'lugar bueno' tras morir, pero sabe que debería estar en el otro lado y trata de ocultarlo."
+  },
+
+  "el_mundo_oculto_de_sabrina": {
+    "trailer": "https://www.youtube.com/embed/ybKUX6thF8Q",
+    "titulo": "El mundo oculto de Sabrina",
+    "genero": "Drama, Fantasía, Terror",
+    "actores": [
+      { "nombre": "Kiernan Shipka", "enlace": "https://es.wikipedia.org/wiki/Kiernan_Shipka" },
+      { "nombre": "Ross Lynch", "enlace": "https://es.wikipedia.org/wiki/Ross_Lynch" },
+      { "nombre": "Lucy Davis", "enlace": "https://es.wikipedia.org/wiki/Lucy_Davis" }
+    ],
+    "temporadas": {
+      "Temporada 1": { "capitulos": [ "Capítulo 1", "…", "Capítulo 11" ] },
+      "Temporada 2": { "capitulos": [ "Capítulo 1", "…", "Capítulo 9" ] },
+      "Temporada 3": { "capitulos": [ "Capítulo 1", "…", "Capítulo 8" ] },
+      "Temporada 4": { "capitulos": [ "Capítulo 1", "…", "Capítulo 8" ] }
+    },
+    "descripcion": "Sabrina Spellman divide su vida entre la mortalidad y la brujería, mientras fuerzas oscuras la amenazan."
+  },
+
+  "american_horror_story": {
+    "trailer": "https://www.youtube.com/embed/Qcjuy8v9Lcw",
+    "titulo": "American Horror Story",
+    "genero": "Horror, Suspenso, Drama",
+    "actores": [
+      { "nombre": "Evan Peters", "enlace": "https://es.wikipedia.org/wiki/Evan_Peters" },
+      { "nombre": "Sarah Paulson", "enlace": "https://es.wikipedia.org/wiki/Sarah_Paulson" },
+      { "nombre": "Emma Roberts", "enlace": "https://es.wikipedia.org/wiki/Emma_Roberts" }
+    ],
+    "temporadas": {
+      "Temporada 1": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 12" ] },
+      "Temporada 2": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 13" ] },
+      "Temporada 3": { "capitulos": [ "Capítulo 1", "…", "Capítulo 13" ] },
+      "Temporada 4": { "capitulos": [ "Capítulo 1", "…", "Capítulo 13" ] },
+      "Temporada 5": { "capitulos": [ "Capítulo 1", "…", "Capítulo 12" ] },
+      "Temporada 6": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] },
+      "Temporada 7": { "capitulos": [ "Capítulo 1", "…", "Capítulo 11" ] },
+      "Temporada 8": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] },
+      "Temporada 9": { "capitulos": [ "Capítulo 1", "…", "Capítulo 9" ] },
+      "Temporada 10": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] },
+      "Temporada 11": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] }
+    },
+    "descripcion": "Cada temporada es una historia de terror independiente con su propio elenco y ambientación."
+  }
+}
