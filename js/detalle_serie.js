@@ -63,17 +63,38 @@ setInterval(() => {
 let data = {};
 let serieActualKey = null;
 
-const iframe = document.getElementById('iframe_trailer');
-const titulo = document.getElementById('titulo');
-const actores = document.getElementById('actores');
+const vIframe = document.getElementById('iframe_trailer');
+const vTitulo = document.getElementById('titulo');
+const vGenero = document.getElementById('genero');
+const vActores = document.getElementById('actores');
 const cantTemporadas = document.getElementById('temporadas');
 const cantCapitulos = document.getElementById('capitulos');
-const descripcion = document.getElementById('descripcion');
+const vDescripcion = document.getElementById('descripcion');
 const btnComenzar = document.getElementById('btn_comenzar');
 
 document.addEventListener('DOMContentLoaded', init);
 async function init() {
     const info = await fetch('../json/data_detalle.json');
     data = await info.json();
-    console.log(data)
+    
+    const params = new URLSearchParams(location.search);
+    const keyURL = params.get('serie');
+
+    serieActualKey = keyURL && data[keyURL] ? keyURL : 'american_horror_story';
+    renderSerie(serieActualKey);
+    renderGaleria();
+}
+
+function renderSerie(key){
+    const serie = data[key]
+    if(!serie) return;
+    serieActualKey = key;
+
+    vIframe.src = serie.trailer;
+    vTitulo.textContent = serie.titulo;
+    vGenero.innerHTML = '<strong>Género:</strong> ${serie.genero}';
+    vDescripcion.textContent = serie.descripcion;
+    btnComenzar.href = serie.trailer.replace('embed/', 'watch?v=');
+    vActores.innerHTML = '<strong>Actores:</strong>' + serie.actores.map(a => '<a href="${a.enlace}" target="_blank> ${a.nombre}</a>').join(', ');
+    selecTemporadas(serie.temporadas);
 }
