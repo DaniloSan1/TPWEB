@@ -59,3 +59,21 @@ botones.forEach((boton, index) => {
 setInterval(() => {
     avanzarGrupo();
 }, 5000);
+
+let data = {};
+let serieActualKey = null;
+
+const iframe = document.getElementById('iframe_trailer');
+const titulo = document.getElementById('titulo');
+const actores = document.getElementById('actores');
+const cantTemporadas = document.getElementById('temporadas');
+const cantCapitulos = document.getElementById('capitulos');
+const descripcion = document.getElementById('descripcion');
+const btnComenzar = document.getElementById('btn_comenzar');
+
+document.addEventListener('DOMContentLoaded', init);
+async function init() {
+    const info = await fetch('../json/data_detalle.json');
+    data = await info.json();
+    console.log(data)
+}
