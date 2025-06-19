@@ -1,8 +1,8 @@
 {
   "arcane": {
-    "trailer": "https://www.youtube.com/embed/fXmAurh012s",
     "titulo": "Arcane",
     "genero": "Animación, Acción, Ciencia Ficción",
+    "imagen": "../assets/img/series/arcane.webp",
     "actores": [
       { "nombre": "Hailee Steinfeld", "enlace": "https://es.wikipedia.org/wiki/Hailee_Steinfeld" },
       { "nombre": "Ella Purnell", "enlace": "https://es.wikipedia.org/wiki/Ella_Purnell" },
@@ -10,10 +10,17 @@
     ],
     "temporadas": {
       "Temporada 1": {
+        "trailer": "https://www.youtube.com/embed/fXmAurh012s",
         "capitulos": [
-          "Capítulo 1", "Capítulo 2", "Capítulo 3",
-          "Capítulo 4", "Capítulo 5", "Capítulo 6",
-          "Capítulo 7", "Capítulo 8", "Capítulo 9"
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9"
         ]
       }
     },
@@ -21,99 +28,409 @@
   },
 
   "envidiosa": {
-    "trailer": "https://www.youtube.com/embed/mTgIk6iTjbI?si=Ae5QRjLyT1JeiLMQ",
     "titulo": "Envidiosa",
     "genero": "Drama, Suspenso",
+    "imagen": "../assets/img/series/envidiosa.webp",
     "actores": [
-      { "nombre": "Actor 1", "enlace": "URL_ACTOR_1" },
-      { "nombre": "Actor 2", "enlace": "URL_ACTOR_2" },
-      { "nombre": "Actor 3", "enlace": "URL_ACTOR_3" }
+      { "nombre": "Griselda Siciliani", "enlace": "https://es.wikipedia.org/wiki/Griselda_Siciliani" },
+      { "nombre": "Esteban Lamothe", "enlace": "https://es.wikipedia.org/wiki/Esteban_Lamothe" },
+      { "nombre": "Lorena Vega", "enlace": "https://es.wikipedia.org/wiki/Lorena_Vega" }
     ],
     "temporadas": {
-      "Temporada 1": { "capitulos": ["Capítulo 1", "Capítulo 2", "Capítulo 3", "Capítulo 4"] },
-      "Temporada 2": { "capitulos": ["Capítulo 1", "Capítulo 2", "Capítulo 3", "Capítulo 4", "Capítulo 5"] }
+      "Temporada 1": {
+        "trailer": "https://www.youtube.com/embed/mTgIk6iTjbI?si=Ae5QRjLyT1JeiLMQ",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4"
+        ]
+      },
+      "Temporada 2": {
+        "trailer": "https://www.youtube.com/embed/dqs74-5mwbY?si=Z3nMgcAiUBgCCbiW", 
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5"
+        ]
+      }
     },
     "descripcion": "Rivalidades, secretos y ambición se entrelazan en un juego peligroso de poder y engaño."
   },
 
-  "el_eternauta": {
-    "trailer": "https://www.youtube.com/embed/ykLTd5aTa88?si=kBPjLiNDr5IFt3Yu",
+  "eleternauta": {
     "titulo": "El Eternauta",
     "genero": "Ciencia Ficción, Aventura",
+    "imagen": "../assets/img/series/eleternauta.webp",
     "actores": [
-      { "nombre": "Actor 1", "enlace": "URL_ACTOR_1" },
-      { "nombre": "Actor 2", "enlace": "URL_ACTOR_2" },
-      { "nombre": "Actor 3", "enlace": "URL_ACTOR_3" }
+      { "nombre": "Ricardo Darín", "enlace": "https://es.wikipedia.org/wiki/Ricardo_Dar%C3%ADn" },
+      { "nombre": "Carla Peterson", "enlace": "https://es.wikipedia.org/wiki/Carla_Peterson" },
+      { "nombre": "César Troncoso", "enlace": "https://es.wikipedia.org/wiki/C%C3%A9sar_Troncoso" }
     ],
     "temporadas": {
       "Temporada 1": {
+        "trailer": "https://www.youtube.com/embed/ykLTd5aTa88?si=kBPjLiNDr5IFt3Yu",
         "capitulos": [
-          "Capítulo 1", "Capítulo 2", "Capítulo 3",
-          "Capítulo 4", "Capítulo 5", "Capítulo 6",
-          "Capítulo 7", "Capítulo 8"
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8"
         ]
       }
     },
     "descripcion": "Adaptación de la historieta argentina: una nevada mortal marca el inicio de la lucha por la supervivencia."
   },
 
-  "the_good_place": {
-    "trailer": "https://www.youtube.com/embed/RfBgT5djaQw",
+  "thegoodplace": {
     "titulo": "The Good Place",
     "genero": "Comedia, Fantasía",
+    "imagen": "../assets/img/series/thegoodplace.webp",
     "actores": [
       { "nombre": "Kristen Bell", "enlace": "https://es.wikipedia.org/wiki/Kristen_Bell" },
       { "nombre": "Ted Danson", "enlace": "https://es.wikipedia.org/wiki/Ted_Danson" },
       { "nombre": "William Jackson Harper", "enlace": "https://es.wikipedia.org/wiki/William_Jackson_Harper" }
     ],
     "temporadas": {
-      "Temporada 1": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 13" ] },
-      "Temporada 2": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 13" ] },
-      "Temporada 3": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 12" ] },
-      "Temporada 4": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 14" ] }
+      "Temporada 1": {
+        "trailer": "https://www.youtube.com/embed/29iKAAeRvI4?si=TfYVyDMOk1_kXbAV",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12",
+          "Capítulo 13"
+        ]
+      },
+      "Temporada 2": {
+        "trailer": "https://www.youtube.com/embed/D1KVG8Prs1Y?si=evY4dnYSL4hl_6Id",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12",
+          "Capítulo 13"
+        ]
+      },
+      "Temporada 3": {
+        "trailer": "https://www.youtube.com/embed/HWY7HsG9yJo?si=0a9e4eEU45zI845z",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12"
+        ]
+      },
+      "Temporada 4": {
+        "trailer": "https://www.youtube.com/embed/SjpmxhXcQiQ?si=ZZlsYzR479fW-iYE",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12",
+          "Capítulo 13",
+          "Capítulo 14"
+        ]
+      }
     },
     "descripcion": "Eleanor llega al 'lugar bueno' tras morir, pero sabe que debería estar en el otro lado y trata de ocultarlo."
   },
 
-  "el_mundo_oculto_de_sabrina": {
-    "trailer": "https://www.youtube.com/embed/ybKUX6thF8Q",
+  "sabrina": {
     "titulo": "El mundo oculto de Sabrina",
     "genero": "Drama, Fantasía, Terror",
+    "imagen": "../assets/img/series/sabrina.webp",
     "actores": [
       { "nombre": "Kiernan Shipka", "enlace": "https://es.wikipedia.org/wiki/Kiernan_Shipka" },
       { "nombre": "Ross Lynch", "enlace": "https://es.wikipedia.org/wiki/Ross_Lynch" },
       { "nombre": "Lucy Davis", "enlace": "https://es.wikipedia.org/wiki/Lucy_Davis" }
     ],
     "temporadas": {
-      "Temporada 1": { "capitulos": [ "Capítulo 1", "…", "Capítulo 11" ] },
-      "Temporada 2": { "capitulos": [ "Capítulo 1", "…", "Capítulo 9" ] },
-      "Temporada 3": { "capitulos": [ "Capítulo 1", "…", "Capítulo 8" ] },
-      "Temporada 4": { "capitulos": [ "Capítulo 1", "…", "Capítulo 8" ] }
+      "Temporada 1": {
+        "trailer": "https://www.youtube.com/embed/51fOujPcgIE?si=XztCfXC3X9mBPKDi",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11"
+        ]
+      },
+      "Temporada 2": {
+        "trailer": "https://www.youtube.com/embed/j2QH3Mzs_Jc?si=PK9ZtXaWitjb_ZT_",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9"
+        ]
+      },
+      "Temporada 3": {
+        "trailer": "https://www.youtube.com/embed/i4Tcwcl_Xlw?si=mZ4aIBEOX7eJqOXL",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8"
+        ]
+      },
+      "Temporada 4": {
+        "trailer": "https://www.youtube.com/embed/-bRdLEOpOwE?si=w6gnN-MIjWKkbDdc",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8"
+        ]
+      }
     },
     "descripcion": "Sabrina Spellman divide su vida entre la mortalidad y la brujería, mientras fuerzas oscuras la amenazan."
   },
 
-  "american_horror_story": {
-    "trailer": "https://www.youtube.com/embed/Qcjuy8v9Lcw",
+  "americanhorrorstory": {
     "titulo": "American Horror Story",
     "genero": "Horror, Suspenso, Drama",
+    "imagen": "../assets/img/series/americanhorrorstory.webp",
     "actores": [
       { "nombre": "Evan Peters", "enlace": "https://es.wikipedia.org/wiki/Evan_Peters" },
       { "nombre": "Sarah Paulson", "enlace": "https://es.wikipedia.org/wiki/Sarah_Paulson" },
       { "nombre": "Emma Roberts", "enlace": "https://es.wikipedia.org/wiki/Emma_Roberts" }
     ],
     "temporadas": {
-      "Temporada 1": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 12" ] },
-      "Temporada 2": { "capitulos": [ "Capítulo 1", "Capítulo 2", "…", "Capítulo 13" ] },
-      "Temporada 3": { "capitulos": [ "Capítulo 1", "…", "Capítulo 13" ] },
-      "Temporada 4": { "capitulos": [ "Capítulo 1", "…", "Capítulo 13" ] },
-      "Temporada 5": { "capitulos": [ "Capítulo 1", "…", "Capítulo 12" ] },
-      "Temporada 6": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] },
-      "Temporada 7": { "capitulos": [ "Capítulo 1", "…", "Capítulo 11" ] },
-      "Temporada 8": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] },
-      "Temporada 9": { "capitulos": [ "Capítulo 1", "…", "Capítulo 9" ] },
-      "Temporada 10": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] },
-      "Temporada 11": { "capitulos": [ "Capítulo 1", "…", "Capítulo 10" ] }
+      "Temporada 1": {
+        "trailer": "https://www.youtube.com/embed/reP8VFF3KHU?si=80I3kxsscyBxRfDF",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12"
+        ]
+      },
+      "Temporada 2": {
+        "trailer": "https://www.youtube.com/embed/syiJDMKu3wI?si=c1W3QN6rMOXQ0ogp",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12",
+          "Capítulo 13"
+        ]
+      },
+      "Temporada 3": {
+        "trailer": "https://www.youtube.com/embed/ItmmrskxpiI?si=VHOW1I8FHeTFW8Fq",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12",
+          "Capítulo 13"
+        ]
+      },
+      "Temporada 4": {
+        "trailer": "https://www.youtube.com/embed/VPTwNuc5b3c?si=Oqc389S2qPPX9Z2_",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12",
+          "Capítulo 13"
+        ]
+      },
+      "Temporada 5": {
+        "trailer": "https://www.youtube.com/embed/Rp_04uEY4Mc?si=Y3so_77GnEzEWv2I",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11",
+          "Capítulo 12"
+        ]
+      },
+      "Temporada 6": {
+        "trailer": "https://www.youtube.com/embed/v06W08QopG8?si=oTrzqHAjNY2E6WWJ",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10"
+        ]
+      },
+      "Temporada 7": {
+        "trailer": "https://www.youtube.com/embed/b9uMWKPdnPA?si=ZgvXMqir2p_n2GBB",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10",
+          "Capítulo 11"
+        ]
+      },
+      "Temporada 8": {
+        "trailer": "https://www.youtube.com/embed/EjS56K9nWYI?si=Tfo0Qxf5D-UQ4-vx",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10"
+        ]
+      },
+      "Temporada 9": {
+        "trailer": "https://www.youtube.com/embed/aSRQRiw4xwc?si=86Rn_mt1g-M7YRw4",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9"
+        ]
+      },
+      "Temporada 10": {
+        "trailer": "https://www.youtube.com/embed/nK2gVZ5Cj30?si=tnIt7JO56RDKgd7h",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10"
+        ]
+      },
+      "Temporada 11": {
+        "trailer": "https://www.youtube.com/embed/DavyPuv-e7U?si=c9oMQu-9H5_djt13",
+        "capitulos": [
+          "Capítulo 1",
+          "Capítulo 2",
+          "Capítulo 3",
+          "Capítulo 4",
+          "Capítulo 5",
+          "Capítulo 6",
+          "Capítulo 7",
+          "Capítulo 8",
+          "Capítulo 9",
+          "Capítulo 10"
+        ]
+      }
     },
     "descripcion": "Cada temporada es una historia de terror independiente con su propio elenco y ambientación."
   }
