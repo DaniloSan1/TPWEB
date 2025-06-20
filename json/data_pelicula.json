@@ -1,0 +1,74 @@
+{
+  "elmono": {
+    "titulo": "El Mono",
+    "genero": "Terror, Suspenso",
+    "imagen": "../assets/img/movies/elmono.webp",
+    "trailer": "https://www.youtube.com/embed/0x7ZEcozO-M",
+    "descripcion": "Dos hermanos descubren un antiguo mono de juguete que desata una serie de muertes inexplicables. Basada en un relato de Stephen King.",
+    "actores": [
+      { "nombre": "Theo James", "enlace": "https://es.wikipedia.org/wiki/Theo_James" },
+      { "nombre": "Tatiana Maslany", "enlace": "https://es.wikipedia.org/wiki/Tatiana_Maslany" },
+      { "nombre": "Elijah Wood", "enlace": "https://es.wikipedia.org/wiki/Elijah_Wood" }
+    ]
+  },
+  "conclave": {
+    "titulo": "Cónclave",
+    "genero": "Drama, Thriller Político",
+    "imagen": "../assets/img/movies/conclave.webp",
+    "trailer": "https://www.youtube.com/embed/J0E78tL6CxY?si=NX7515gkcOh7uKve",
+    "descripcion": "Tras la muerte del Papa, los cardenales se reúnen en el Vaticano para elegir a su sucesor, pero secretos oscuros amenazan con desestabilizar la Iglesia.",
+    "actores": [
+      { "nombre": "Ralph Fiennes", "enlace": "https://es.wikipedia.org/wiki/Ralph_Fiennes" },
+      { "nombre": "Stanley Tucci", "enlace": "https://es.wikipedia.org/wiki/Stanley_Tucci" },
+      { "nombre": "Isabella Rossellini", "enlace": "https://es.wikipedia.org/wiki/Isabella_Rossellini" }
+    ]
+  },
+  "smile2": {
+    "titulo": "Smile 2",
+    "genero": "Terror, Psicológico",
+    "imagen": "../assets/img/movies/smile2.webp",
+    "trailer": "https://www.youtube.com/embed/69GcScd6sGk?si=8dVnYSVrUcIky06x",
+    "descripcion": "Una estrella del pop comienza a experimentar sucesos aterradores antes de su gira mundial. La maldición de la sonrisa continúa.",
+    "actores": [
+      { "nombre": "Naomi Scott", "enlace": "https://es.wikipedia.org/wiki/Naomi_Scott" },
+      { "nombre": "Lukas Gage", "enlace": "https://es.wikipedia.org/wiki/Lukas_Gage" },
+      { "nombre": "Kyle Gallner", "enlace": "https://es.wikipedia.org/wiki/Kyle_Gallner" }
+    ]
+  },
+  "pulpfiction": {
+    "titulo": "Pulp Fiction",
+    "genero": "Crimen, Comedia Negra",
+    "imagen": "../assets/img/movies/pulpfiction.webp",
+    "trailer": "https://www.youtube.com/embed/s7EdQ4FqbhY?si=rrRu4Qdk5MMNXPCT",
+    "descripcion": "Historias entrelazadas de asesinos a sueldo, boxeadores y criminales en Los Ángeles. Un clásico de Quentin Tarantino.",
+    "actores": [
+      { "nombre": "John Travolta", "enlace": "https://es.wikipedia.org/wiki/John_Travolta" },
+      { "nombre": "Uma Thurman", "enlace": "https://es.wikipedia.org/wiki/Uma_Thurman" },
+      { "nombre": "Samuel L. Jackson", "enlace": "https://es.wikipedia.org/wiki/Samuel_L._Jackson" }
+    ]
+  },
+  "wicked": {
+    "titulo": "Wicked",
+    "genero": "Fantasía, Musical",
+    "imagen": "../assets/img/movies/wicked.webp",
+    "trailer": "https://www.youtube.com/embed/_vh2FAGTw58?si=JHccKgRZpRdgZZK0",
+    "descripcion": "Antes de que Dorothy llegara a Oz, Elphaba y Glinda forjaron una amistad que cambiaría el destino del reino para siempre.",
+    "actores": [
+      { "nombre": "Cynthia Erivo", "enlace": "https://es.wikipedia.org/wiki/Cynthia_Erivo" },
+      { "nombre": "Ariana Grande", "enlace": "https://es.wikipedia.org/wiki/Ariana_Grande" },
+      { "nombre": "Jonathan Bailey", "enlace": "https://es.wikipedia.org/wiki/Jonathan_Bailey" }
+    ]
+  },
+  "eldiablovistealamoda": {
+    "titulo": "El Diablo Viste a la Moda",
+    "genero": "Comedia, Drama",
+    "imagen": "../assets/img/movies/eldiablovistealamoda.webp",
+    "trailer": "https://www.youtube.com/embed/6ZOZwUQKu3E?si=FmnQS_d5epVM8ImQ",
+    "descripcion": "Una joven periodista consigue trabajo como asistente de la temida editora de una revista de moda. Glamour, exigencias y decisiones difíciles.",
+    "actores": [
+      { "nombre": "Meryl Streep", "enlace": "https://es.wikipedia.org/wiki/Meryl_Streep" },
+      { "nombre": "Anne Hathaway", "enlace": "https://es.wikipedia.org/wiki/Anne_Hathaway" },
+      { "nombre": "Emily Blunt", "enlace": "https://es.wikipedia.org/wiki/Emily_Blunt" }
+    ]
+  }
+}

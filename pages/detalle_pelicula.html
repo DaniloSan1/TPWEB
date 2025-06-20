@@ -26,23 +26,23 @@
     <main>
         <section class="detalle">
             <div class="trailer">
-                <iframe  src="https://www.youtube.com/embed/0x7ZEcozO-M" 
-                        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <iframe id="iframe_trailer" src="" title="YouTube video player" frameborder="0"
+                    allowfullscreen></iframe>
             </div>
             <div class="informacion">
-                <h1 class="titulo">El Mono</h1>
-                <p><strong>Género:</strong> Terror/Comedia</p>
-                <p><strong>Actores:</strong> 
-                    <a href="https://es.wikipedia.org/wiki/Theo_James" target="_blank">Theo James</a>, 
-                    <a href="https://es.wikipedia.org/wiki/Oz_Perkins" target="_blank">Oz Perkins</a>, 
-                    <a href="https://es.wikipedia.org/wiki/Tatiana_Maslany" target="_blank">Tatiana Maslany</a>
+                <h1 class="titulo" id="titulo"></h1>
+                <p id="genero"><strong>Género:</strong></p>
+                <p id="actores"><strong>Actores:</strong>
+                    <a href="" target="_blank"></a>,
+                    <a href="" target="_blank"></a>,
+                    <a href="" target="_blank"></a>
                 </p>
                 <div class="seleccion">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, fugit voluptatem consequuntur nostrum velit voluptates deserunt. Harum quasi, excepturi iusto amet, eligendi ratione, eaque atque dolorum nam esse velit quo!</p>
+                    <p id="descripcion"></p>
                 </div>
                 <div class="botones">
-                <a href="https://www.youtube.com/watch?v=0x7ZEcozO-M" target="_blank" class="btn">Comenzar</a>
-                <a href="../pages/home.html" class="btn">Volver</a>
+                <a id="btn_comenzar" href="" target="_blank" class="btn">Comenzar</a>
+                <a id="btn_volver" href="../pages/home.html" class="btn">Volver</a>
                 </div>
             </div>
         </section>
@@ -50,21 +50,13 @@
         <section class="similares">
             <h2 class="subtitulo">Similares</h2>
             <div class="contenedor-galeria">
-                <article class="card_peliculaYserie">
-                    <a href="../pages/detalle_serie.html"><img src="../assets/img/series/americanhorrorstory.webp" alt="American Horror Story"></a>
-                </article>
-                <article class="card_peliculaYserie">
-                    <a href="../pages/detalle_pelicula.html"><img src="../assets/img/movies/smile2.webp" alt="Smile"></a>
-                </article>
-                <article class="card_peliculaYserie">
-                    <a href="../pages/detalle_pelicula.html"><img src="../assets/img/movies/eldiablovistealamoda.webp" alt="El Diablo Viste a la Moda"></a>
-                </article>
             </div>
             <div class="carrousel-indicador">
-                <button class="btn-indicador activo" aria-label="Imagen 1"></button>
-                <button class="btn-indicador" aria-label="Imagen 2"></button>
+                <button class="btn-indicador activo" type="button" aria-label="Imagen 1"></button>
+                <button class="btn-indicador" type="button" aria-label="Imagen 2"></button>
             </div>
         </section>
     </main>
+    <script src="../js/detalle_pelicula.js"></script>
 </body>
 </html>
