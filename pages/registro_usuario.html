@@ -16,36 +16,48 @@
     <h1 class="titulo titulo_registro">Registrarse</h1>
     <section class="section_usuario">
 
-      <form action="../index.html" method="submit" class="form_usuario">
+      <form id = "formulario" action="../index.html" method="get" class="form_usuario">
         <div class="grupo_form_usuario">
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" />
+            <div class="error js-nombre-error"></div>
+
         </div>
 
         <div class="grupo_form_usuario">
           <label for="apellido">Apellido</label>
-          <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+          <input type="text" id="apellido" name="apellido" placeholder="Apellido" />
+            <div class="error js-apellido-error"></div>
+
         </div>
 
         <div class="grupo_form_usuario">
           <label for="usuario">Usuario</label>
-          <input type="text" id="usuario" name="usuario" placeholder="Usuario" required />
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario" />
+            <div class="error js-usuario-error"></div>
+
         </div>
 
         <div class="grupo_form_usuario">
           <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="usuario@dominio.com" required />
+          <input type="email" id="email" name="email" placeholder="usuario@dominio.com" />
+            <div class="error js-email-error"></div>
+
         </div>
 
         <div class="grupo_form_usuario">
           <label for="contrasena">Contraseña</label>
-          <input type="password" id="contrasena" name="contrasena" placeholder="**********" required />
+          <input type="password" id="contrasena" name="contrasena" placeholder="**********" />
+            <div class="error js-contrasena-error"></div>
+
         </div>
 
         <div class="grupo_form_usuario">
           <label for="repetir_contrasena">Repetir contraseña</label>
           <input type="password" id="repetir_contrasena" name="repetir_contrasena"
-            placeholder="Ingrese nueva contraseña" required />
+            placeholder="Ingrese nueva contraseña" />
+              <div class="error js-repetircontra-error"></div>
+
         </div>
 
     </section>
@@ -92,6 +104,7 @@
       </form>
     </section>
   </div>
+  <script src="../js/registro_usuario.js"></script>
 </body>
 
 </html>
