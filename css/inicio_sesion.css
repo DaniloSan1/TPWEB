@@ -46,6 +46,22 @@
 }
 
 
+#mensaje_error{
+    color: red;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.btn_gris{
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+
+
 @media screen and (max-width:47em) {
     .section_foto {
         display: none;

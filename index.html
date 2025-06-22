@@ -17,12 +17,14 @@
 
             <h1 class="titulo">Inicio Sesion</h1>
 
-            <form class="form_contenedor" action="./pages/home.html">
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit" class="btn">Iniciar Sesion</button>
+            <form class="form_contenedor" id="form_inicio_sesion" action="./pages/home.html">
+                <input type="text" id="usuario" placeholder="Usuario" required>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
+                <button type="submit" class="btn" id="btn_inicio_sesion" disabled>Iniciar Sesion</button>
+                <p id="mensaje_error"></p>
+        
             </form>
-    
+
             <div class="etiquetasInicio">
                 <a class="link" href="pages/recu_contra.html">Recuperar contraseña</a><br>
                 <a class="link" href="pages/registro_usuario.html">Registrarse</a>
@@ -36,7 +38,7 @@
 
 
     </div>
-
+    <script src="./js/inicio_sesion.js"></script>
 </body>
 
 </html>
