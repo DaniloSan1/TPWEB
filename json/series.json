@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "tipo": "serie",
+    "nombre": "The Good Place",
+    "categoria": "comedia",
+    "imagen": "../assets/img/series/thegoodplace.webp",
+    "detalle": "detalle_serie.html"
+  },
+  {
+    "id": 2,
+    "tipo": "serie",
+    "nombre": "Sabrina",
+    "categoria": "terror",
+    "imagen": "../assets/img/series/sabrina.webp",
+    "detalle": "detalle_serie.html"
+  },
+  {
+    "id": 3,
+    "tipo": "serie",
+    "nombre": "American Horror Story",
+    "categoria": "terror",
+    "imagen": "../assets/img/series/americanhorrorstory.webp",
+    "detalle": "detalle_serie.html"
+  },
+  {
+    "id": 4,
+    "tipo": "serie",
+    "nombre": "El Eternauta",
+    "categoria": "accion",
+    "imagen": "../assets/img/series/eleternauta.webp",
+    "detalle": "detalle_serie.html"
+  },
+  {
+    "id": 5,
+    "tipo": "serie",
+    "nombre": "Envidiosa",
+    "categoria": "drama",
+    "imagen": "../assets/img/series/envidiosa.webp",
+    "detalle": "detalle_serie.html"
+  },
+  {
+    "id": 6,
+    "tipo": "serie",
+    "nombre": "Arcane",
+    "categoria": "accion",
+    "imagen": "../assets/img/series/arcane.webp",
+    "detalle": "detalle_serie.html"
+  }
+]

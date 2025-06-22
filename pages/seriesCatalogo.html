@@ -28,34 +28,30 @@
     </header>
 
     <section class="section_catalogo">
-        <h2 class="subtitulo">Series</h2>
-
+    <h2 class="subtitulo">Series</h2>
+    <section class="filtros">
+        <div class="filtro_categoria">
+            <label for="categoria">Filtrar por categoría:</label>
+            <select id="categoria" class="input">
+                <option value="">Todas</option>
+                <option value="accion">Acción</option>
+                <option value="comedia">Comedia</option>
+                <option value="drama">Drama</option>
+                <option value="terror">Terror</option>
+                <option value="romance">Romance</option>
+            </select>
+        </div>
+        <div class="buscador">
+            <form id="form-buscar" autocomplete="off">
+                <input type="text" id="buscar" placeholder="Buscar...">
+                <button type="submit" class="btn">Buscar</button>
+            </form>
+        </div>
     </section>
-    <div class="contenedor-galeria">
-        <article class="card_peliculaYserie">
-            <a href="/pages/detalle_serie.html"><img src="../assets/img/series/americanhorrorstory.webp"
-                    alt="El diablo viste a la moda"></a>
-        </article>
-        <article class="card_peliculaYserie">
-            <a href="/pages/detalle_serie.html"><img src="../assets/img/series/arcane.webp" alt=""></a>
-        </article>
-        <article class="card_peliculaYserie">
-            <a href="/pages/detalle_serie.html"><img src="../assets/img/series/eleternauta.webp" alt=""></a>
-        </article>
-        <article class="card_peliculaYserie">
-            <a href="/pages/detalle_serie.html"><img src="../assets/img/series/envidiosa.webp" alt=""></a>
-        </article>
-        <article class="card_peliculaYserie">
-            <a href="/pages/detalle_serie.html"><img src="../assets/img/series/sabrina.webp" alt=""></a>
-        </article>
-        <article class="card_peliculaYserie">
-            <a href="/pages/detalle_serie.html"><img src="../assets/img/series/thegoodplace.webp" alt=""></a>
-        </article>
+</section>
+<div class="contenedor-galeria" id="galeria"></div>
 
-    </div>
-
-    </section>
-
+    <script src="../js/seriesCatalogo.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "tipo": "pelicula",
+    "nombre": "El diablo viste a la moda",
+    "categoria": "comedia",
+    "imagen": "../assets/img/movies/eldiablovistealamoda.webp",
+    "detalle": "detalle_pelicula.html"
+  },
+  {
+    "id": 2,
+    "tipo": "pelicula",
+    "nombre": "Smile 2",
+    "categoria": "terror",
+    "imagen": "../assets/img/movies/smile2.webp",
+    "detalle": "detalle_pelicula.html"
+  },
+  {
+    "id": 3,
+    "tipo": "pelicula",
+    "nombre": "Conclave",
+    "categoria": "drama",
+    "imagen": "../assets/img/movies/conclave.webp",
+    "detalle": "detalle_pelicula.html"
+  },
+  {
+    "id": 4,
+    "tipo": "pelicula",
+    "nombre": "Wicked",
+    "categoria": "romance",
+    "imagen": "../assets/img/movies/wicked.webp",
+    "detalle": "detalle_pelicula.html"
+  },
+  {
+    "id": 5,
+    "tipo": "pelicula",
+    "nombre": "El Mono",
+    "categoria": "accion",
+    "imagen": "../assets/img/movies/elmono.webp",
+    "detalle": "detalle_pelicula.html"
+  },
+  {
+    "id": 6,
+    "tipo": "pelicula",
+    "nombre": "Pulp Fiction",
+    "categoria": "accion",
+    "imagen": "../assets/img/movies/pulpfiction.webp",
+    "detalle": "detalle_pelicula.html"
+  }
+]
