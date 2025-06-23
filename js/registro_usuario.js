@@ -168,6 +168,11 @@ function registroValidate() {
         return;
       }
 
+      // Obtener método de pago seleccionado
+      const metodoPagoSeleccionado = document.querySelector(
+        'input[name="metodo_pago"]:checked'
+      )?.value;
+
       const nuevoUsuario = {
         nombre,
         apellido,
@@ -175,6 +180,7 @@ function registroValidate() {
         email,
         contrasena: contra,
         codigoTarjeta,
+        metodoPago: metodoPagoSeleccionado,
       };
 
       usuarios.push(nuevoUsuario);
