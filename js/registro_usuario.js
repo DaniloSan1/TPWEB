@@ -125,10 +125,19 @@ if (codigoTarjeta == ""){
     errorCodigo.textContent = ERROR_MESSAGES.CODIGO_INVALIDO;
 }
 if (isFormValid) {
-    console.log("Formulario válido, enviar datos...");
+    const datosUsuario = {
+        nombre,
+        apellido,
+        usuario,
+        email,
+        contrasena: contra,
+        codigoTarjeta
+    };
+
+    localStorage.setItem("usuarioRegistrado", JSON.stringify(datosUsuario));
+    console.log("Datos guardados en localStorage");
+    registroForm.submit(); 
 }
-})
-};
 
 
 registroValidate();
