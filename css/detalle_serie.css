@@ -31,6 +31,7 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    position: relative;
 }
 
 .informacion a {
@@ -96,6 +97,21 @@
 .btn-indicador.activo{
     background: var(--var_colorFondoBotones, #205BBA);
     opacity: 1;
+}
+
+.corazon {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 2em;
+    height: 2em;
+    fill: #bbb;
+    cursor: pointer;
+    transition: fill 0.3s;
+    z-index: 10;
+}
+.corazon.favorito {
+    fill: #e53935;
 }
 
 @media (max-width: 1065px) {
