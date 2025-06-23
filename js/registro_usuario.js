@@ -13,8 +13,9 @@ const ERROR_MESSAGES = {
 
 const regexLetras = /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/;
 const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const regexUsuario = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z0-9]+$/;
+const regexUsuario = /^[a-zA-Z0-9]+$/;
 const regexCodigo = /^[1-9]{3}$/;
+const regexNumeroTarjeta = /^\d{16}$/;
 
 function registroValidate() {
   const registroForm = document.getElementById("formulario");
@@ -138,7 +139,7 @@ function registroValidate() {
     if (numeroTarjeta === "") {
       errorTarjeta.textContent = ERROR_MESSAGES.CAMPO_VACIO;
       isFormValid = false;
-    } else if (!/^\d{16}$/.test(numeroTarjeta)) {
+    } else if (!regexNumeroTarjeta.test(numeroTarjeta)) {
       errorTarjeta.textContent = ERROR_MESSAGES.NRO_TARJETA_INVALIDO;
       isFormValid = false;
     } else {
@@ -157,7 +158,17 @@ function registroValidate() {
       }
     }
     if (isFormValid) {
-      const datosUsuario = {
+      // Obtener array usuarios del localStorage o un array vacío
+      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+      // Verificar si el usuario ya existe para evitar duplicados
+      const usuarioExistente = usuarios.find((u) => u.usuario === usuario);
+      if (usuarioExistente) {
+        errorUsuario.textContent = "El usuario ya existe.";
+        return;
+      }
+
+      const nuevoUsuario = {
         nombre,
         apellido,
         usuario,
@@ -166,7 +177,9 @@ function registroValidate() {
         codigoTarjeta,
       };
 
-      localStorage.setItem("usuarioRegistrado", JSON.stringify(datosUsuario));
+      usuarios.push(nuevoUsuario);
+
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
       console.log("Datos guardados en localStorage");
       registroForm.submit();
     }
