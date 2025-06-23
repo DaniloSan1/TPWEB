@@ -8,6 +8,7 @@ const ERROR_MESSAGES = {
     "La contraseña debe tener minimo 2 letras, 2 numeros y 2 caracteres especiales.",
   REPETIR_CONTRA_INVALIDA: "Las contraseñas deben ser iguales.",
   CODIGO_INVALIDO: "El código debe tener 3 números distintos de cero.",
+  NRO_TARJETA_INVALIDO: "El numero de tarjeta es invalido",
 };
 
 const regexLetras = /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/;
@@ -26,6 +27,10 @@ function registroValidate() {
     const usuario = document.querySelector("#usuario").value.trim();
     const email = document.querySelector("#email").value.trim();
     const contra = document.querySelector("#contrasena").value.trim();
+    const numeroTarjeta = document
+      .querySelector("#numero_tarjeta")
+      .value.trim();
+
     const repe_contra = document
       .querySelector("#repetir_contrasena")
       .value.trim();
@@ -43,6 +48,7 @@ function registroValidate() {
     const errorRepetirContra = document.querySelector(
       ".js-repetircontra-error"
     );
+    const errorTarjeta = document.querySelector(".js-tarjeta-error");
 
     errorNombre.textContent = "";
     errorApellido.textContent = "";
@@ -51,6 +57,7 @@ function registroValidate() {
     errorContrasena.textContent = "";
     errorCodigo.textContent = "";
     errorRepetirContra.textContent = "";
+    errorTarjeta.textContent = "";
 
     function validarContrasena(contra) {
       if (contra.length < 8) return false;
@@ -75,7 +82,7 @@ function registroValidate() {
 
     let isFormValid = true;
 
-    if (nombre == "") {
+    if (nombre === "") {
       errorNombre.textContent = ERROR_MESSAGES.CAMPO_VACIO;
       isFormValid = false;
     } else if (!regexLetras.test(nombre)) {
@@ -83,7 +90,7 @@ function registroValidate() {
       isFormValid = false;
     }
 
-    if (apellido == "") {
+    if (apellido === "") {
       errorApellido.textContent = ERROR_MESSAGES.CAMPO_VACIO;
       isFormValid = false;
     } else if (!regexLetras.test(apellido)) {
@@ -91,7 +98,7 @@ function registroValidate() {
       isFormValid = false;
     }
 
-    if (email == "") {
+    if (email === "") {
       errorEmail.textContent = ERROR_MESSAGES.CAMPO_VACIO;
       isFormValid = false;
     } else if (!regexEmail.test(email)) {
@@ -99,7 +106,7 @@ function registroValidate() {
       isFormValid = false;
     }
 
-    if (usuario == "") {
+    if (usuario === "") {
       errorUsuario.textContent = ERROR_MESSAGES.CAMPO_VACIO;
       isFormValid = false;
     } else if (!regexUsuario.test(usuario)) {
@@ -122,11 +129,32 @@ function registroValidate() {
       isFormValid = false;
     }
 
-    if (codigoTarjeta == "") {
+    if (codigoTarjeta === "") {
       errorCodigo.textContent = ERROR_MESSAGES.CAMPO_VACIO;
       isFormValid = false;
     } else if (!regexCodigo.test(codigoTarjeta)) {
       errorCodigo.textContent = ERROR_MESSAGES.CODIGO_INVALIDO;
+    }
+    if (numeroTarjeta === "") {
+      errorTarjeta.textContent = ERROR_MESSAGES.CAMPO_VACIO;
+      isFormValid = false;
+    } else if (!/^\d{16}$/.test(numeroTarjeta)) {
+      errorTarjeta.textContent = ERROR_MESSAGES.NRO_TARJETA_INVALIDO;
+      isFormValid = false;
+    } else {
+      const numeros = numeroTarjeta.split("").map((n) => parseInt(n));
+      const suma = numeros.slice(0, 15).reduce((a, b) => a + b, 0);
+      const ultimo = numeros[15];
+
+      if (
+        (suma % 2 === 0 && ultimo % 2 === 0) ||
+        (suma % 2 !== 0 && ultimo % 2 !== 0)
+      ) {
+        errorTarjeta.textContent = "El último número no es válido.";
+        isFormValid = false;
+      } else {
+        errorTarjeta.textContent = "";
+      }
     }
     if (isFormValid) {
       const datosUsuario = {

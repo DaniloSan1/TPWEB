@@ -66,13 +66,14 @@
       <h3>Método de pago</h3>
 
     
-      <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta" required>
+      <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta">
       <label for="pago_tarjeta">Tarjeta de crédito</label>
 
       <div class="grupo_form_pago">
 
         <label for="numero_tarjeta">Número de tarjeta</label>
         <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="Número Tarjeta">
+        <div class="error js-tarjeta-error"></div>
 
         <label for="codigo_tarjeta">Código de seguridad</label>
         <input type="text" id="codigo_tarjeta" name="codigo_tarjeta" placeholder="XXX">
