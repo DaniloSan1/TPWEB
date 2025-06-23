@@ -19,6 +19,40 @@ const cantCapitulos = document.getElementById('capitulos');
 const vDescripcion = document.getElementById('descripcion');
 const btnComenzar = document.getElementById('btn_comenzar');
 
+const LS_KEY = 'favoritos';
+function getFavoritos(){
+    const favoritos = localStorage.getItem(LS_KEY);
+    return favoritos ? JSON.parse(favoritos) : [];
+}
+function saveFavoritos(favoritos){
+    localStorage.setItem(LS_KEY, JSON.stringify(favoritos));
+}
+function isFavorito(id){
+    return getFavoritos().includes(id);
+}
+function toggleFavorito(id){
+    const favoritos = getFavoritos();
+    const index = favoritos.indexOf(id);
+    if(index >= 0){
+        favoritos.splice(index, 1);
+    }else{
+        favoritos.push(id);
+    }
+    saveFavoritos(favoritos);
+    return index < 0;
+}
+function initFavorito(id){
+    const corazon = document.querySelector('.corazon');
+    if(!corazon) return;
+    const marcado = isFavorito(id);
+    corazon.classList.toggle('favorito', marcado);
+    corazon.addEventListener('click', () => {
+        const esFavorito = toggleFavorito(id);
+        corazon.classList.toggle('favorito', esFavorito);
+    })
+};
+
+
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
@@ -29,6 +63,7 @@ async function init() {
     const keyURL = params.get('serie');
     serieActualKey = keyURL && data[keyURL] ? keyURL : 'americanhorrorstory';
     renderSerie(serieActualKey);
+    initFavorito(serieActualKey);
     cambiarImagen();
     actualizarBotones();
     botones.forEach((boton, index) => {
