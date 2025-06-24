@@ -137,6 +137,21 @@ option {
     cursor: pointer;
 }
 
+.footer {
+    background-color: #222429;
+    color: var(--var_colorTextoGeneral);
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer_img{
+    height: 4em;
+    width: auto;
+}
+
+
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
 
