@@ -109,6 +109,13 @@ button {
     background-color: #0143ad;
 }
 
+
+.btn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
 input,
 select {
     padding: 0.5em 1em;
