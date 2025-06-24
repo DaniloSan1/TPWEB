@@ -19,39 +19,37 @@ const cantCapitulos = document.getElementById('capitulos');
 const vDescripcion = document.getElementById('descripcion');
 const btnComenzar = document.getElementById('btn_comenzar');
 
-const LS_KEY = 'favoritos';
-function getFavoritos(){
-    const favoritos = localStorage.getItem(LS_KEY);
+function getFavoritos(usuario){
+    const favoritos = localStorage.getItem(`favoritos_${usuario}`);
     return favoritos ? JSON.parse(favoritos) : [];
 }
-function saveFavoritos(favoritos){
-    localStorage.setItem(LS_KEY, JSON.stringify(favoritos));
+function saveFavoritos(usuario, favoritos){
+    localStorage.setItem(`favoritos_${usuario}`, JSON.stringify(favoritos));
 }
-function isFavorito(id){
-    return getFavoritos().includes(id);
+function isFavorito(usuario, id){
+    return getFavoritos(usuario).includes(id);
 }
-function toggleFavorito(id){
-    const favoritos = getFavoritos();
+function toggleFavorito(usuario, id){
+    const favoritos = getFavoritos(usuario);
     const index = favoritos.indexOf(id);
     if(index >= 0){
         favoritos.splice(index, 1);
     }else{
         favoritos.push(id);
     }
-    saveFavoritos(favoritos);
+    saveFavoritos(usuario, favoritos);
     return index < 0;
 }
-function initFavorito(id){
+function initFavorito(usuario, id){
     const corazon = document.querySelector('.corazon');
     if(!corazon) return;
-    const marcado = isFavorito(id);
+    const marcado = isFavorito(usuario, id);
     corazon.classList.toggle('favorito', marcado);
     corazon.addEventListener('click', () => {
-        const esFavorito = toggleFavorito(id);
+        const esFavorito = toggleFavorito(usuario, id);
         corazon.classList.toggle('favorito', esFavorito);
-    })
-};
-
+    });
+}
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -62,8 +60,10 @@ async function init() {
     const params = new URLSearchParams(location.search);
     const keyURL = params.get('serie');
     serieActualKey = keyURL && data[keyURL] ? keyURL : 'americanhorrorstory';
+
+    const usuarioActual = localStorage.getItem("usuarioActual");
     renderSerie(serieActualKey);
-    initFavorito(serieActualKey);
+    initFavorito(usuarioActual, serieActualKey);
     cambiarImagen();
     actualizarBotones();
     botones.forEach((boton, index) => {
@@ -124,16 +124,12 @@ function renderSerie(key) {
     if (!serie) return;
     serieActualKey = key;
     const temporadas = Object.keys(serie.temporadas);
-   
     vIframe.src = serie.temporadas[temporadas[0]].trailer;
     vTitulo.textContent = serie.titulo;
     vGenero.innerHTML = `<strong>Género:</strong> ${serie.genero}`;
     vDescripcion.textContent = serie.descripcion;
-   
     vActores.innerHTML = `<strong>Actores:</strong> ` + serie.actores.map(a => `<a href="${a.enlace}" target="_blank">${a.nombre}</a>`).join(', ');
-    
     selecTemporadas(serie.temporadas);
-   
     btnComenzar.href = serie.temporadas[temporadas[0]].trailer.replace('embed/', 'watch?v=');
 }
 
