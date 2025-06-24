@@ -151,6 +151,19 @@ option {
     width: auto;
 }
 
+.footer_logo{
+    margin: 2em;
+}
+
+.footer_info{
+    margin: 2em;
+}
+
+.integrantes{
+    font-size: 0.7em;
+   
+}
+
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
