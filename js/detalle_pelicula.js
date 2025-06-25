@@ -17,18 +17,30 @@ const vActores     = document.getElementById('actores');
 const vDescripcion = document.getElementById('descripcion');
 const btnComenzar  = document.getElementById('btn_comenzar');
 
-const LS_KEY = 'favoritos';
-function getFavoritos(){
-    const favoritos = localStorage.getItem(LS_KEY);
+localStorage.removeItem("favoritos");
+localStorage.removeItem("favoritos_null");
+
+function getUsuarioActivo() {
+    const usuarioActualObj = JSON.parse(localStorage.getItem("usuarioActivo"));
+    return usuarioActualObj ? usuarioActualObj.usuario : null;
+}
+function getFavoritos() {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return [];
+    const favoritos = localStorage.getItem(`favoritos_${usuario}`);
     return favoritos ? JSON.parse(favoritos) : [];
 }
-function saveFavoritos(favoritos){
-    localStorage.setItem(LS_KEY, JSON.stringify(favoritos));
+function saveFavoritos(favoritos) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return;
+    localStorage.setItem(`favoritos_${usuario}`, JSON.stringify(favoritos));
 }
-function isFavorito(id){
+function isFavorito(id) {
     return getFavoritos().includes(id);
 }
-function toggleFavorito(id){
+function toggleFavorito(id) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return false;
     const favoritos = getFavoritos();
     const index = favoritos.indexOf(id);
     if(index >= 0){
@@ -42,13 +54,29 @@ function toggleFavorito(id){
 function initFavorito(id){
     const corazon = document.querySelector('.corazon');
     if(!corazon) return;
+    const nuevoCorazon = corazon.cloneNode(true);
+    corazon.parentNode.replaceChild(nuevoCorazon, corazon);
+
+    const usuario = getUsuarioActivo();
+    if(!usuario) {
+        nuevoCorazon.classList.remove('favorito');
+        nuevoCorazon.addEventListener('click', () => {
+            alert("Debes iniciar sesión para agregar favoritos.");
+        });
+        return;
+    }
     const marcado = isFavorito(id);
-    corazon.classList.toggle('favorito', marcado);
-    corazon.addEventListener('click', () => {
+    nuevoCorazon.classList.toggle('favorito', marcado);
+    nuevoCorazon.addEventListener('click', () => {
+        const usuarioClick = getUsuarioActivo();
+        if(!usuarioClick) {
+            alert("Debes iniciar sesión para agregar favoritos.");
+            return;
+        }
         const esFavorito = toggleFavorito(id);
-        corazon.classList.toggle('favorito', esFavorito);
-    })
-};
+        nuevoCorazon.classList.toggle('favorito', esFavorito);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', init);
 
