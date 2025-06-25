@@ -18,7 +18,7 @@
 
             <h1 class="titulo">Recuperar Contraseña</h1>
 
-            <form class="form_contenedor" id="form_recu_contra" autocomplete="off">
+            <form class="form_contenedor" id="form_recu_contra" >
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="text" id="usuario" placeholder="Usuario" required>
                 <div class="botones_div">
@@ -28,6 +28,15 @@
                 <p id="mensaje_error" style="color:red;text-align:center;"></p>
             </form>
         </div>
+
+        <div id="popup_exito" class="popup-exito">
+  <div class="popup-exito-content">
+    <span id="cerrar_popup" class="popup-exito-close">&times;</span>
+    <h2>¡Email enviado!</h2>
+    <p>El mail de recuperación fue enviado correctamente.</p>
+    <button id="popup_ok" class="btn">Aceptar</button>
+  </div>
+</div>
         <script src="../js/recu_contra.js"></script>
     </body>
 </body>

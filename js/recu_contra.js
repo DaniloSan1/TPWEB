@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnEnviar = document.getElementById('btn_enviar');
     const form = document.getElementById('form_recu_contra');
     const mensajeError = document.getElementById('mensaje_error');
+    const popup = document.getElementById('popup_exito');
+    const cerrarPopup = document.getElementById('cerrar_popup');
+    const popupOk = document.getElementById('popup_ok');
 
     function checkInputs() {
         btnEnviar.disabled = !(emailInput.value.trim() && usuarioInput.value.trim());
@@ -21,10 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const usuarioValido = usuarios.find(u => u.usuario === usuario && u.email === email);
 
         if (usuarioValido) {
-            alert('Se ha enviado un email de recuperación.');
-            window.location.href = "../index.html";
+            popup.style.display = "flex";
         } else {
             mensajeError.textContent = "Usuario o email incorrectos.";
         }
     });
+
+    function cerrarYRedirigir() {
+        popup.style.display = "none";
+        window.location.href = "../index.html";
+    }
+
+    cerrarPopup.addEventListener('click', cerrarYRedirigir);
+    popupOk.addEventListener('click', cerrarYRedirigir);
+
 });
