@@ -2,7 +2,7 @@
   {
     "id": 1,
     "tipo": "serie",
-    "nombre": "The Good Place",
+    "nombre": "thegoodplace",
     "categoria": "comedia",
     "imagen": "../assets/img/series/thegoodplace.webp",
     "detalle": "detalle_serie.html"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "tipo": "serie",
-    "nombre": "Sabrina",
+    "nombre": "sabrina",
     "categoria": "terror",
     "imagen": "../assets/img/series/sabrina.webp",
     "detalle": "detalle_serie.html"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "tipo": "serie",
-    "nombre": "American Horror Story",
+    "nombre": "americanhorrorstory",
     "categoria": "terror",
     "imagen": "../assets/img/series/americanhorrorstory.webp",
     "detalle": "detalle_serie.html"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "tipo": "serie",
-    "nombre": "El Eternauta",
+    "nombre": "eleternauta",
     "categoria": "accion",
     "imagen": "../assets/img/series/eleternauta.webp",
     "detalle": "detalle_serie.html"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "tipo": "serie",
-    "nombre": "Envidiosa",
+    "nombre": "envidiosa",
     "categoria": "drama",
     "imagen": "../assets/img/series/envidiosa.webp",
     "detalle": "detalle_serie.html"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "tipo": "serie",
-    "nombre": "Arcane",
+    "nombre": "arcane",
     "categoria": "accion",
     "imagen": "../assets/img/series/arcane.webp",
     "detalle": "detalle_serie.html"

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "tipo": "pelicula",
-    "nombre": "El diablo viste a la moda",
+    "nombre": "eldiablovistealamoda",
     "categoria": "comedia",
     "imagen": "../assets/img/movies/eldiablovistealamoda.webp",
     "detalle": "detalle_pelicula.html"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "tipo": "pelicula",
-    "nombre": "Smile 2",
+    "nombre": "smile2",
     "categoria": "terror",
     "imagen": "../assets/img/movies/smile2.webp",
     "detalle": "detalle_pelicula.html"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "tipo": "pelicula",
-    "nombre": "Conclave",
+    "nombre": "conclave",
     "categoria": "drama",
     "imagen": "../assets/img/movies/conclave.webp",
     "detalle": "detalle_pelicula.html"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "tipo": "pelicula",
-    "nombre": "Wicked",
+    "nombre": "wicked",
     "categoria": "romance",
     "imagen": "../assets/img/movies/wicked.webp",
     "detalle": "detalle_pelicula.html"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "tipo": "pelicula",
-    "nombre": "El Mono",
+    "nombre": "elMono",
     "categoria": "accion",
     "imagen": "../assets/img/movies/elmono.webp",
     "detalle": "detalle_pelicula.html"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "tipo": "pelicula",
-    "nombre": "Pulp Fiction",
+    "nombre": "pulpfiction",
     "categoria": "accion",
     "imagen": "../assets/img/movies/pulpfiction.webp",
     "detalle": "detalle_pelicula.html"
