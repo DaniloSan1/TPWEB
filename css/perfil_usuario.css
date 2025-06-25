@@ -107,12 +107,11 @@
     margin-bottom: 2em;
 }
 .lista-favoritos li {
-    margin-bottom: 0.7em;
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
     position: relative;
     padding-right: 2.5em;
+    min-height: 2.2em;
+    display: flex;
+    align-items: center;
 }
 .fav-link {
     color: #205BBA;
@@ -121,14 +120,15 @@
 }
 .corazon {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 50%;
+    right: 0.5em;
     width: 2em;
     height: 2em;
     fill: #bbb;
     cursor: pointer;
     transition: fill 0.3s;
     z-index: 10;
+    transform: translateY(-50%);
 }
 .corazon.favorito {
     fill: #e53935;
