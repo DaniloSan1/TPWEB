@@ -1,7 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    cambiarImagen();
-    actualizarBotones();
-});
+document.addEventListener('DOMContentLoaded', init);
 
 let data = {};
 let serieActualKey = null;
@@ -19,35 +16,67 @@ const cantCapitulos = document.getElementById('capitulos');
 const vDescripcion = document.getElementById('descripcion');
 const btnComenzar = document.getElementById('btn_comenzar');
 
-function getFavoritos(usuario){
+
+localStorage.removeItem("favoritos");
+localStorage.removeItem("favoritos_null");
+
+function getUsuarioActivo() {
+    const usuarioActualObj = JSON.parse(localStorage.getItem("usuarioActivo"));
+    return usuarioActualObj ? usuarioActualObj.usuario : null;
+}
+
+function getFavoritos() {
+    const usuario = getUsuarioActivo();
+    console.log(usuario);
+    if (!usuario) return [];
     const favoritos = localStorage.getItem(`favoritos_${usuario}`);
     return favoritos ? JSON.parse(favoritos) : [];
 }
-function saveFavoritos(usuario, favoritos){
+function saveFavoritos(favoritos) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return;
     localStorage.setItem(`favoritos_${usuario}`, JSON.stringify(favoritos));
 }
-function isFavorito(usuario, id){
-    return getFavoritos(usuario).includes(id);
+function isFavorito(id) {
+    return getFavoritos().includes(id);
 }
-function toggleFavorito(usuario, id){
-    const favoritos = getFavoritos(usuario);
+function toggleFavorito(id) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return false;
+    const favoritos = getFavoritos();
     const index = favoritos.indexOf(id);
     if(index >= 0){
         favoritos.splice(index, 1);
     }else{
         favoritos.push(id);
     }
-    saveFavoritos(usuario, favoritos);
+    saveFavoritos(favoritos);
     return index < 0;
 }
-function initFavorito(usuario, id){
+function initFavorito(id){
     const corazon = document.querySelector('.corazon');
     if(!corazon) return;
-    const marcado = isFavorito(usuario, id);
-    corazon.classList.toggle('favorito', marcado);
-    corazon.addEventListener('click', () => {
-        const esFavorito = toggleFavorito(usuario, id);
-        corazon.classList.toggle('favorito', esFavorito);
+    const nuevoCorazon = corazon.cloneNode(true);
+    corazon.parentNode.replaceChild(nuevoCorazon, corazon);
+
+    const usuario = getUsuarioActivo();
+    if(!usuario) {
+        nuevoCorazon.classList.remove('favorito');
+        nuevoCorazon.addEventListener('click', () => {
+            alert("Debes iniciar sesión para agregar favoritos.");
+        });
+        return;
+    }
+    const marcado = isFavorito(id);
+    nuevoCorazon.classList.toggle('favorito', marcado);
+    nuevoCorazon.addEventListener('click', () => {
+        const usuarioClick = getUsuarioActivo();
+        if(!usuarioClick) {
+            alert("Debes iniciar sesión para agregar favoritos.");
+            return;
+        }
+        const esFavorito = toggleFavorito(id);
+        nuevoCorazon.classList.toggle('favorito', esFavorito);
     });
 }
 
@@ -61,9 +90,8 @@ async function init() {
     const keyURL = params.get('serie');
     serieActualKey = keyURL && data[keyURL] ? keyURL : 'americanhorrorstory';
 
-    const usuarioActual = localStorage.getItem("usuarioActual");
     renderSerie(serieActualKey);
-    initFavorito(usuarioActual, serieActualKey);
+    initFavorito(serieActualKey);
     cambiarImagen();
     actualizarBotones();
     botones.forEach((boton, index) => {
