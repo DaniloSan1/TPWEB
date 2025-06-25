@@ -24,7 +24,7 @@ function getUsuarioActivo() {
     const usuarioActualObj = JSON.parse(localStorage.getItem("usuarioActivo"));
     return usuarioActualObj ? usuarioActualObj.usuario : null;
 }
-function getFavoritos() {
+/*function getFavoritos() {
     const usuario = getUsuarioActivo();
     if (!usuario) return [];
     const favoritos = localStorage.getItem(`favoritos_${usuario}`);
@@ -50,7 +50,7 @@ function toggleFavorito(id) {
     }
     saveFavoritos(favoritos);
     return index < 0;
-}
+}*/
 function getFavoritosPeliculas() {
     const usuario = getUsuarioActivo();
     if (!usuario) return [];
