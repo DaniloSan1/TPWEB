@@ -16,10 +16,6 @@ const cantCapitulos = document.getElementById('capitulos');
 const vDescripcion = document.getElementById('descripcion');
 const btnComenzar = document.getElementById('btn_comenzar');
 
-
-localStorage.removeItem("favoritos");
-localStorage.removeItem("favoritos_null");
-
 function getUsuarioActivo() {
     const usuarioActualObj = JSON.parse(localStorage.getItem("usuarioActivo"));
     return usuarioActualObj ? usuarioActualObj.usuario : null;
@@ -27,7 +23,6 @@ function getUsuarioActivo() {
 
 function getFavoritos() {
     const usuario = getUsuarioActivo();
-    console.log(usuario);
     if (!usuario) return [];
     const favoritos = localStorage.getItem(`favoritos_${usuario}`);
     return favoritos ? JSON.parse(favoritos) : [];
@@ -38,20 +33,47 @@ function saveFavoritos(favoritos) {
     localStorage.setItem(`favoritos_${usuario}`, JSON.stringify(favoritos));
 }
 function isFavorito(id) {
-    return getFavoritos().includes(id);
+    return getFavoritos().some(f => f.tipo === "serie" && f.key === id);
 }
 function toggleFavorito(id) {
     const usuario = getUsuarioActivo();
     if (!usuario) return false;
     const favoritos = getFavoritos();
-    const index = favoritos.indexOf(id);
-    if(index >= 0){
-        favoritos.splice(index, 1);
+    const idx = favoritos.findIndex(f => f.tipo === "serie" && f.key === id);
+    if(idx >= 0){
+        favoritos.splice(idx, 1);
+    }else{
+        favoritos.push({ tipo: "serie", key: id });
+    }
+    saveFavoritos(favoritos);
+    return idx < 0;
+}
+function getFavoritosSeries() {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return [];
+    const favoritos = localStorage.getItem(`favoritos_series_${usuario}`);
+    return favoritos ? JSON.parse(favoritos) : [];
+}
+function saveFavoritosSeries(favoritos) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return;
+    localStorage.setItem(`favoritos_series_${usuario}`, JSON.stringify(favoritos));
+}
+function isFavoritoSerie(id) {
+    return getFavoritosSeries().includes(id);
+}
+function toggleFavoritoSerie(id) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return false;
+    const favoritos = getFavoritosSeries();
+    const idx = favoritos.indexOf(id);
+    if(idx >= 0){
+        favoritos.splice(idx, 1);
     }else{
         favoritos.push(id);
     }
-    saveFavoritos(favoritos);
-    return index < 0;
+    saveFavoritosSeries(favoritos);
+    return idx < 0;
 }
 function initFavorito(id){
     const corazon = document.querySelector('.corazon');
@@ -67,7 +89,7 @@ function initFavorito(id){
         });
         return;
     }
-    const marcado = isFavorito(id);
+    const marcado = isFavoritoSerie(id);
     nuevoCorazon.classList.toggle('favorito', marcado);
     nuevoCorazon.addEventListener('click', () => {
         const usuarioClick = getUsuarioActivo();
@@ -75,12 +97,10 @@ function initFavorito(id){
             alert("Debes iniciar sesión para agregar favoritos.");
             return;
         }
-        const esFavorito = toggleFavorito(id);
+        const esFavorito = toggleFavoritoSerie(id);
         nuevoCorazon.classList.toggle('favorito', esFavorito);
     });
 }
-
-document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     const info = await fetch('../json/data_detalle.json');

@@ -51,6 +51,33 @@ function toggleFavorito(id) {
     saveFavoritos(favoritos);
     return index < 0;
 }
+function getFavoritosPeliculas() {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return [];
+    const favoritos = localStorage.getItem(`favoritos_peliculas_${usuario}`);
+    return favoritos ? JSON.parse(favoritos) : [];
+}
+function saveFavoritosPeliculas(favoritos) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return;
+    localStorage.setItem(`favoritos_peliculas_${usuario}`, JSON.stringify(favoritos));
+}
+function isFavoritoPelicula(id) {
+    return getFavoritosPeliculas().includes(id);
+}
+function toggleFavoritoPelicula(id) {
+    const usuario = getUsuarioActivo();
+    if (!usuario) return false;
+    const favoritos = getFavoritosPeliculas();
+    const idx = favoritos.indexOf(id);
+    if(idx >= 0){
+        favoritos.splice(idx, 1);
+    }else{
+        favoritos.push(id);
+    }
+    saveFavoritosPeliculas(favoritos);
+    return idx < 0;
+}
 function initFavorito(id){
     const corazon = document.querySelector('.corazon');
     if(!corazon) return;
@@ -65,7 +92,7 @@ function initFavorito(id){
         });
         return;
     }
-    const marcado = isFavorito(id);
+    const marcado = isFavoritoPelicula(id);
     nuevoCorazon.classList.toggle('favorito', marcado);
     nuevoCorazon.addEventListener('click', () => {
         const usuarioClick = getUsuarioActivo();
@@ -73,7 +100,7 @@ function initFavorito(id){
             alert("Debes iniciar sesión para agregar favoritos.");
             return;
         }
-        const esFavorito = toggleFavorito(id);
+        const esFavorito = toggleFavoritoPelicula(id);
         nuevoCorazon.classList.toggle('favorito', esFavorito);
     });
 }

@@ -100,3 +100,36 @@
     width: 100%; 
   }
 }
+
+.lista-favoritos {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+}
+.lista-favoritos li {
+    margin-bottom: 0.7em;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 2.5em;
+}
+.fav-link {
+    color: #205BBA;
+    text-decoration: none;
+    font-weight: 500;
+}
+.corazon {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 2em;
+    height: 2em;
+    fill: #bbb;
+    cursor: pointer;
+    transition: fill 0.3s;
+    z-index: 10;
+}
+.corazon.favorito {
+    fill: #e53935;
+}
