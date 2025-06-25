@@ -1,50 +1,9 @@
-const ERROR_MESSAGES = {
-  CONTRA_INVALIDA:
-    "La contraseña debe tener minimo 2 letras, 2 numeros y 2 caracteres especiales.",
-  REPETIR_CONTRA_INVALIDA: "Las contraseñas deben ser iguales.",
-};
-
-//Validar Contraseña
-  const nuevaContra = document.querySelector("#nueva_contrasena").value.trim();
-  const repeContra = document.querySelector("#repetir_contrasena").value.trim();
-  const errorContrasena = document.querySelector(".js-contrasena-error");
-  const errorRepetirContra = document.querySelector(
-      ".js-repetircontra-error"
-    );
-
-      errorContrasena.textContent = "";
-      errorRepetirContra.textContent = "";
-
-function validarContrasena(nuevaContra) {
-      if (nuevaContra.length < 8) return false;
-
-      let letras = 0;
-      let numeros = 0;
-      let especiales = 0;
-
-      for (let i = 0; i < nuevaContra.length; i++) {
-        const char = nuevaContra[i];
-        if (/[a-zA-Z]/.test(char)) {
-          letras++;
-        } else if (/[0-9]/.test(char)) {
-          numeros++;
-        } else if (/[^a-zA-Z0-9]/.test(char)) {
-          especiales++;
-        }
-      }
-      return letras >= 2 && numeros >= 2 && especiales >= 2;
-    }
-
-    if (repeContra !== contra) {
-      errorRepetirContra.textContent = ERROR_MESSAGES.REPETIR_CONTRA_INVALIDA;
-      isFormValid = false;
-    };
-    
-    validarContrasena(nuevaContra);
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
+  const ERROR_MESSAGES = {
+    CONTRA_INVALIDA: "La contraseña debe tener mínimo 2 letras, 2 números y 2 caracteres especiales.",
+    REPETIR_CONTRA_INVALIDA: "Las contraseñas deben ser iguales.",
+  };
+
   const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
   let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -56,9 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Referencias
   const emailInput = document.getElementById("email");
   const nombreUsuario = document.querySelector(".texto");
-  const nuevaContra = document.getElementById("nueva_contrasena");
-  const repetirContra = document.getElementById("repetir_contrasena");
+  const nuevaContraInput = document.getElementById("nueva_contrasena");
+  const repetirContraInput = document.getElementById("repetir_contrasena");
   const form = document.querySelector(".form_usuario");
+  const errorContrasena = document.querySelector(".js-contrasena-error");
+  const errorRepetirContra = document.querySelector(".js-repetircontra-error");
+  const btnCancelar = document.querySelector(".btn_cancelar");
 
   // Mostrar datos actuales
   emailInput.value = usuarioActivo.email;
@@ -73,14 +35,50 @@ document.addEventListener("DOMContentLoaded", function () {
     if (radio) radio.checked = true;
   }
 
+  // Función para validar contraseña
+  function validarContrasena(nuevaContra) {
+    if (nuevaContra.length < 8) return false;
+
+    let letras = 0;
+    let numeros = 0;
+    let especiales = 0;
+
+    for (let i = 0; i < nuevaContra.length; i++) {
+      const char = nuevaContra[i];
+      if (/[a-zA-Z]/.test(char)) {
+        letras++;
+      } else if (/[0-9]/.test(char)) {
+        numeros++;
+      } else if (/[^a-zA-Z0-9]/.test(char)) {
+        especiales++;
+      }
+    }
+
+    return letras >= 2 && numeros >= 2 && especiales >= 2;
+  }
+
   // Guardar cambios
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    if (nuevaContra.value !== repetirContra.value) {
-      alert("Las contraseñas no coinciden.");
-      return;
+    const nuevaContra = nuevaContraInput.value.trim();
+    const repetirContra = repetirContraInput.value.trim();
+    errorContrasena.textContent = "";
+    errorRepetirContra.textContent = "";
+
+    let isFormValid = true;
+
+    if (!validarContrasena(nuevaContra)) {
+      errorContrasena.textContent = ERROR_MESSAGES.CONTRA_INVALIDA;
+      isFormValid = false;
     }
+
+    if (nuevaContra !== repetirContra) {
+      errorRepetirContra.textContent = ERROR_MESSAGES.REPETIR_CONTRA_INVALIDA;
+      isFormValid = false;
+    }
+
+    if (!isFormValid) return;
 
     const nuevoMetodoPago = document.querySelector(
       'input[name="metodo_pago"]:checked'
@@ -88,11 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const actualizado = {
       ...usuarioActivo,
-      contrasena: nuevaContra.value,
+      contrasena: nuevaContra,
       metodoPago: nuevoMetodoPago,
     };
 
-    // Actualizar array de usuarios
     usuarios = usuarios.map((u) =>
       u.usuario === usuarioActivo.usuario ? actualizado : u
     );
@@ -104,12 +101,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Cancelar suscripción
-  const btnCancelar = document.querySelector(".btn_cancelar");
   btnCancelar.addEventListener("click", function (e) {
     e.preventDefault();
-      usuarios = usuarios.filter((u) => u.usuario !== usuarioActivo.usuario);
-      localStorage.setItem("usuarios", JSON.stringify(usuarioActivo.usuario));
-      localStorage.removeItem("usuarioActivo");
-      window.location.href = "../index.html";
+
+    const nuevoListadoUsuarios = usuarios.filter(
+      (u) => u.usuario !== usuarioActivo.usuario
+    );
+
+    localStorage.setItem("usuarios", JSON.stringify(nuevoListadoUsuarios));
+    localStorage.removeItem("usuarioActivo");
+
+    alert("Tu suscripción fue cancelada con éxito.");
+    window.location.href = "../index.html";
   });
 });
