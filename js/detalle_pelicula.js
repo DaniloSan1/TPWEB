@@ -24,33 +24,7 @@ function getUsuarioActivo() {
     const usuarioActualObj = JSON.parse(localStorage.getItem("usuarioActivo"));
     return usuarioActualObj ? usuarioActualObj.usuario : null;
 }
-/*function getFavoritos() {
-    const usuario = getUsuarioActivo();
-    if (!usuario) return [];
-    const favoritos = localStorage.getItem(`favoritos_${usuario}`);
-    return favoritos ? JSON.parse(favoritos) : [];
-}
-function saveFavoritos(favoritos) {
-    const usuario = getUsuarioActivo();
-    if (!usuario) return;
-    localStorage.setItem(`favoritos_${usuario}`, JSON.stringify(favoritos));
-}
-function isFavorito(id) {
-    return getFavoritos().includes(id);
-}
-function toggleFavorito(id) {
-    const usuario = getUsuarioActivo();
-    if (!usuario) return false;
-    const favoritos = getFavoritos();
-    const index = favoritos.indexOf(id);
-    if(index >= 0){
-        favoritos.splice(index, 1);
-    }else{
-        favoritos.push(id);
-    }
-    saveFavoritos(favoritos);
-    return index < 0;
-}*/
+
 function getFavoritosPeliculas() {
     const usuario = getUsuarioActivo();
     if (!usuario) return [];
