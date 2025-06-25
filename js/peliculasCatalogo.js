@@ -29,7 +29,7 @@ function renderGaleria() {
         const card = document.createElement('article');
         card.className = "card_peliculaYserie";
         card.innerHTML = `
-            <a href="detalle_pelicula.html?pelicula=${encodeURIComponent(item.nombre)}">
+            <a href="detalle_pelicula.html?${item.tipo}=${encodeURIComponent(item.nombre)}">
                 <img src="${item.imagen}" alt="${item.nombre}" title="${item.nombre}">
             </a>
         `;
