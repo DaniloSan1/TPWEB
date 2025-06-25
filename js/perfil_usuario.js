@@ -107,12 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnCancelar = document.querySelector(".btn_cancelar");
   btnCancelar.addEventListener("click", function (e) {
     e.preventDefault();
-
-    if (confirm("¿Estás seguro de que querés cancelar tu suscripción?")) {
       usuarios = usuarios.filter((u) => u.usuario !== usuarioActivo.usuario);
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      localStorage.setItem("usuarios", JSON.stringify(usuarioActivo.usuario));
       localStorage.removeItem("usuarioActivo");
       window.location.href = "../index.html";
-    }
   });
 });
