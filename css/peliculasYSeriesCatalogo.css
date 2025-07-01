@@ -29,7 +29,17 @@
   border-radius: 0.5em;
   cursor: pointer;
 }
-
+.corazon {
+  fill: #ccc;
+  transition: fill 0.2s;
+  user-select: none;
+}
+.corazon.favorito {
+  fill: #e53935;
+}
+.corazon:hover {
+  fill: #e53935;
+}
 .subtitulo {
   text-align: center;
 }
@@ -56,27 +66,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-<section class="section_catalogo">
-    <h2 class="subtitulo">Películas</h2>
-    <section class="filtros">
-        <div class="filtro_categoria">
-            <label for="categoria">Filtrar por categoría:</label>
-            <select id="categoria" class="input">
-                <option value="">Todas</option>
-                <option value="accion">Acción</option>
-                <option value="comedia">Comedia</option>
-                <option value="drama">Drama</option>
-                <option value="terror">Terror</option>
-                <option value="romance">Romance</option>
-            </select>
-        </div>
-        <div class="buscador">
-            <form id="form-buscar" autocomplete="off">
-                <input type="text" id="buscar" placeholder="Buscar...">
-                <button type="submit" class="btn">Buscar</button>
-            </form>
-        </div>
-    </section>
-</section>
-<div class="contenedor-galeria" id="galeria"></div>
