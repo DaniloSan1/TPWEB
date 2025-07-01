@@ -34,6 +34,18 @@
   text-align: center;
 }
 
+.corazon {
+  fill: #ccc;
+  transition: fill 0.2s;
+  user-select: none;
+}
+.corazon.favorito {
+  fill: #e53935;
+}
+.corazon:hover {
+  fill: #e53935;
+}
+
 @media (max-width: 1200px) {
   .contenedor-galeria {
     grid-template-columns: repeat(3, 1fr);
