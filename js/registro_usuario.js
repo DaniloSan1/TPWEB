@@ -19,23 +19,23 @@ const regex = {
 };
 
 const validadores = {
-  texto: (v) => regex.letras.test(v),
-  email: (v) => regex.email.test(v),
-  usuario: (v) => regex.usuario.test(v),
-  codigo: (v) => regex.codigo.test(v),
-  tarjeta: (v) => regex.tarjeta.test(v),
-  contrasena: (v) => {
-    if (v.length < 8) return false;
-    const l = (v.match(/[a-zA-Z]/g) || []).length;
-    const n = (v.match(/[0-9]/g) || []).length;
-    const e = (v.match(/[^a-zA-Z0-9]/g) || []).length;
-    return l >= 2 && n >= 2 && e >= 2;
+  texto: (texto) => regex.letras.test(texto),
+  email: (email) => regex.email.test(email),
+  usuario: (usuario) => regex.usuario.test(usuario),
+  codigo: (codigo) => regex.codigo.test(codigo),
+  tarjeta: (numeroTarjeta) => regex.tarjeta.test(numeroTarjeta),
+  contrasena: (contrasena) => {
+    if (contrasena.length < 8) return false;
+    const letras = (contrasena.match(/[a-zA-Z]/g) || []).length;
+    const numeros = (contrasena.match(/[0-9]/g) || []).length;
+    const especiales = (contrasena.match(/[^a-zA-Z0-9]/g) || []).length;
+    return letras >= 2 && numeros >= 2 && especiales >= 2;
   },
 };
 
-function mostrarError(el, msg) {
-  const error = document.querySelector(`.js-${el}-error`);
-  if (error) error.textContent = msg;
+function mostrarError(elemento, mensaje) {
+  const error = document.querySelector(`.js-${elemento}-error`);
+  if (error) error.textContent = mensaje;
 }
 
 function limpiarErrorIndividual(id) {
@@ -47,22 +47,22 @@ function limpiarErrores() {
   document.querySelectorAll("[class^='js-'][class$='-error']").forEach(e => e.textContent = "");
 }
 
-function validarCampo(v, validador, msgVacio, msgInvalido, el) {
-  if (!v) {
-    mostrarError(el, msgVacio);
+function validarCampo(valor, validador, msgVacio, msgInvalido, elemento) {
+  if (!valor) {
+    mostrarError(elemento, msgVacio);
     return false;
   }
-  if (!validador(v)) {
-    mostrarError(el, msgInvalido);
+  if (!validador(valor)) {
+    mostrarError(elemento, msgInvalido);
     return false;
   }
-  limpiarErrorIndividual(el);
+  limpiarErrorIndividual(elemento);
   return true;
 }
 
 function validarFormulario() {
   limpiarErrores();
-  const d = {
+  const datos = {
     nombre: document.getElementById("nombre").value.trim(),
     apellido: document.getElementById("apellido").value.trim(),
     usuario: document.getElementById("usuario").value.trim(),
@@ -76,46 +76,45 @@ function validarFormulario() {
 
   let valido = true;
 
-  valido &= validarCampo(d.nombre, validadores.texto, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.NOMBRE_INVALIDO, "nombre");
-  valido &= validarCampo(d.apellido, validadores.texto, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.APELLIDO_INVALIDO, "apellido");
-  valido &= validarCampo(d.usuario, validadores.usuario, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.USUARIO_INVALIDO, "usuario");
-  valido &= validarCampo(d.email, validadores.email, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.EMAIL_INVALIDO, "email");
+  valido &= validarCampo(datos.nombre, validadores.texto, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.NOMBRE_INVALIDO, "nombre");
+  valido &= validarCampo(datos.apellido, validadores.texto, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.APELLIDO_INVALIDO, "apellido");
+  valido &= validarCampo(datos.usuario, validadores.usuario, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.USUARIO_INVALIDO, "usuario");
+  valido &= validarCampo(datos.email, validadores.email, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.EMAIL_INVALIDO, "email");
 
-  if (!d.contrasena) {
+  if (!datos.contrasena) {
     mostrarError("contrasena", ERROR_MESSAGES.CAMPO_VACIO);
     valido = false;
-  } else if (!validadores.contrasena(d.contrasena)) {
+  } else if (!validadores.contrasena(datos.contrasena)) {
     mostrarError("contrasena", ERROR_MESSAGES.CONTRA_INVALIDA);
     valido = false;
   } else {
     limpiarErrorIndividual("contrasena");
   }
 
-  if (!d.repetirContrasena) {
+  if (!datos.repetirContrasena) {
     mostrarError("repetircontra", ERROR_MESSAGES.CAMPO_VACIO);
     valido = false;
-  } else if (d.repetirContrasena !== d.contrasena) {
+  } else if (datos.repetirContrasena !== datos.contrasena) {
     mostrarError("repetircontra", ERROR_MESSAGES.REPETIR_CONTRA_INVALIDA);
     valido = false;
   } else {
     limpiarErrorIndividual("repetircontra");
   }
 
-  if (d.metodoPago === "tarjeta") {
-    valido &= validarCampo(d.codigoTarjeta, validadores.codigo, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.CODIGO_INVALIDO, "codigo");
+  if (datos.metodoPago === "tarjeta") {
+    valido &= validarCampo(datos.codigoTarjeta, validadores.codigo, ERROR_MESSAGES.CAMPO_VACIO, ERROR_MESSAGES.CODIGO_INVALIDO, "codigo");
 
-    if (!d.numeroTarjeta) {
+    if (!datos.numeroTarjeta) {
       mostrarError("tarjeta", ERROR_MESSAGES.CAMPO_VACIO);
       valido = false;
-    } else if (!validadores.tarjeta(d.numeroTarjeta)) {
+    } else if (!validadores.tarjeta(datos.numeroTarjeta)) {
       mostrarError("tarjeta", ERROR_MESSAGES.NRO_TARJETA_INVALIDO);
       valido = false;
     } else {
-      const n = d.numeroTarjeta.split("").map(Number);
-      const suma = n.slice(0, 15).reduce((a, b) => a + b, 0);
-      const ult = n[15];
-
-      if ((suma % 2 === 0 && ult % 2 === 0) || (suma % 2 !== 0 && ult % 2 !== 0)) {
+      const numeros = datos.numeroTarjeta.split("").map(Number);
+      const suma = numeros.slice(0, 15).reduce((a, b) => a + b, 0);
+      const ultimo = numeros[15];
+      if ((suma % 2 === 0 && ultimo % 2 === 0) || (suma % 2 !== 0 && ultimo % 2 !== 0)) {
         mostrarError("tarjeta", ERROR_MESSAGES.NRO_TARJETA_INVALIDO);
         valido = false;
       } else {
@@ -124,7 +123,7 @@ function validarFormulario() {
     }
   }
 
-  if (d.metodoPago === "cupon") {
+  if (datos.metodoPago === "cupon") {
     const pagoFacil = document.getElementById("pago_facil");
     const rapipago = document.getElementById("rapipago");
     const algunoMarcado = (pagoFacil.checked && !pagoFacil.disabled) || (rapipago.checked && !rapipago.disabled);
@@ -134,21 +133,21 @@ function validarFormulario() {
   return valido;
 }
 
-function guardarUsuario(d) {
+function guardarUsuario(datos) {
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-  const existe = usuarios.some(u => u.usuario === d.usuario);
+  const existe = usuarios.some(u => u.usuario === datos.usuario);
   if (existe) {
     mostrarError("usuario", "El usuario ya existe.");
     return false;
   }
-  usuarios.push(d);
+  usuarios.push(datos);
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   return true;
 }
 
 function registroValidate() {
-  const form = document.getElementById("formulario");
-  const btn = document.getElementById("btn_confirmar");
+  const formulario = document.getElementById("formulario");
+  const btnConfirmar = document.getElementById("btn_confirmar");
 
   function actualizarBoton() {
     const metodo = document.querySelector('input[name="metodo_pago"]:checked')?.value;
@@ -166,16 +165,16 @@ function registroValidate() {
                    (rapipago.checked && !rapipago.disabled);
     }
 
-    btn.disabled = !completos;
+    btnConfirmar.disabled = !completos;
   }
 
-  form.addEventListener("input", actualizarBoton);
-  form.addEventListener("change", actualizarBoton);
+  formulario.addEventListener("input", actualizarBoton);
+  formulario.addEventListener("change", actualizarBoton);
 
-  form.addEventListener("submit", (e) => {
+  formulario.addEventListener("submit", (e) => {
     e.preventDefault();
     if (validarFormulario()) {
-      const d = {
+      const datos = {
         nombre: document.getElementById("nombre").value.trim(),
         apellido: document.getElementById("apellido").value.trim(),
         usuario: document.getElementById("usuario").value.trim(),
@@ -184,53 +183,53 @@ function registroValidate() {
         codigoTarjeta: document.getElementById("codigo_tarjeta").value.trim(),
         metodoPago: document.querySelector('input[name="metodo_pago"]:checked')?.value,
       };
-      if (guardarUsuario(d)) form.submit();
+      if (guardarUsuario(datos)) formulario.submit();
     }
   });
 
   actualizarBoton();
 }
 
-function setDisabled(grupo, dis) {
-  grupo.querySelectorAll("input, select, button, textarea").forEach(i => i.disabled = dis);
+function setDisabled(grupo, disabled) {
+  grupo.querySelectorAll("input, select, button, textarea").forEach(i => i.disabled = disabled);
 }
 
 function gestionarMetodoPago() {
-  const t = document.getElementById("pago_tarjeta");
-  const c = document.getElementById("pago_cupon");
-  const gT = document.getElementById("grupo_tarjeta");
-  const gC = document.getElementById("grupo_cupon");
+  const radioTarjeta = document.getElementById("pago_tarjeta");
+  const radioCupon = document.getElementById("pago_cupon");
+  const grupoTarjeta = document.getElementById("grupo_tarjeta");
+  const grupoCupon = document.getElementById("grupo_cupon");
 
   function actualizar() {
-    if (t.checked) {
-      setDisabled(gT, false);
-      setDisabled(gC, true);
+    if (radioTarjeta.checked) {
+      setDisabled(grupoTarjeta, false);
+      setDisabled(grupoCupon, true);
       document.getElementById("pago_facil").checked = false;
       document.getElementById("rapipago").checked = false;
-    } else if (c.checked) {
-      setDisabled(gT, true);
-      setDisabled(gC, false);
+    } else if (radioCupon.checked) {
+      setDisabled(grupoTarjeta, true);
+      setDisabled(grupoCupon, false);
     } else {
-      setDisabled(gT, true);
-      setDisabled(gC, true);
+      setDisabled(grupoTarjeta, true);
+      setDisabled(grupoCupon, true);
     }
   }
 
-  t.addEventListener("change", actualizar);
-  c.addEventListener("change", actualizar);
+  radioTarjeta.addEventListener("change", actualizar);
+  radioCupon.addEventListener("change", actualizar);
   actualizar();
 }
 
 function activarLimpiezaErroresEnTiempoReal() {
   const campos = ["nombre", "apellido", "usuario", "email", "contrasena", "repetir_contrasena", "codigo_tarjeta", "numero_tarjeta"];
-  campos.forEach(c => {
-    const input = document.getElementById(c);
+  campos.forEach(campo => {
+    const input = document.getElementById(campo);
     if (input) {
       input.addEventListener("input", () => {
         limpiarErrorIndividual(
-          c === "repetir_contrasena" ? "repetircontra" :
-          c === "codigo_tarjeta" ? "codigo" :
-          c === "numero_tarjeta" ? "tarjeta" : c
+          campo === "repetir_contrasena" ? "repetircontra" :
+          campo === "codigo_tarjeta" ? "codigo" :
+          campo === "numero_tarjeta" ? "tarjeta" : campo
         );
       });
     }
