@@ -29,12 +29,23 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Mostrar método de pago
   if (usuarioActivo.metodoPago) {
-    const metodo = usuarioActivo.metodoPago;
-    const radio = document.querySelector(
-      `input[name="metodo_pago"][value="${metodo}"]`
-    );
-    if (radio) radio.checked = true;
+  const metodo = usuarioActivo.metodoPago;
+  const radio = document.querySelector(
+    `input[name="metodo_pago"][value="${metodo}"]`
+  );
+  if (radio) radio.checked = true;
+
+  if (metodo === "cupon" && usuarioActivo.cuponTipo) {
+    const pagoFacil = document.getElementById("pago_facil");
+    const rapipago = document.getElementById("rapipago");
+
+    if (usuarioActivo.cuponTipo === "Pago Fácil" && pagoFacil) {
+      pagoFacil.checked = true;
+    } else if (usuarioActivo.cuponTipo === "Rapipago" && rapipago) {
+      rapipago.checked = true;
+    }
   }
+}
 
   // Función para validar contraseña
   function validarContrasena(nuevaContra) {

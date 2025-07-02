@@ -72,6 +72,7 @@ function validarFormulario() {
     metodoPago: document.querySelector('input[name="metodo_pago"]:checked')?.value,
     numeroTarjeta: document.getElementById("numero_tarjeta").value.trim(),
     codigoTarjeta: document.getElementById("codigo_tarjeta").value.trim(),
+    
   };
 
   let valido = true;
@@ -171,21 +172,31 @@ function registroValidate() {
   formulario.addEventListener("input", actualizarBoton);
   formulario.addEventListener("change", actualizarBoton);
 
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (validarFormulario()) {
-      const datos = {
-        nombre: document.getElementById("nombre").value.trim(),
-        apellido: document.getElementById("apellido").value.trim(),
-        usuario: document.getElementById("usuario").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        contrasena: document.getElementById("contrasena").value.trim(),
-        codigoTarjeta: document.getElementById("codigo_tarjeta").value.trim(),
-        metodoPago: document.querySelector('input[name="metodo_pago"]:checked')?.value,
-      };
-      if (guardarUsuario(datos)) formulario.submit();
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (validarFormulario()) {
+    const metodo = document.querySelector('input[name="metodo_pago"]:checked')?.value;
+    
+    let cuponTipo = null;
+    if (metodo === "cupon") {
+      if (document.getElementById("pago_facil").checked) cuponTipo = "Pago Fácil";
+      else if (document.getElementById("rapipago").checked) cuponTipo = "Rapipago";
     }
-  });
+
+    const datos = {
+      nombre: document.getElementById("nombre").value.trim(),
+      apellido: document.getElementById("apellido").value.trim(),
+      usuario: document.getElementById("usuario").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      contrasena: document.getElementById("contrasena").value.trim(),
+      codigoTarjeta: document.getElementById("codigo_tarjeta").value.trim(),
+      metodoPago: metodo,
+      cuponTipo: cuponTipo, 
+    };
+
+    if (guardarUsuario(datos)) formulario.submit();
+  }
+});
 
   actualizarBoton();
 }
