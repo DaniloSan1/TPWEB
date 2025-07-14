@@ -74,31 +74,27 @@
 
       <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta">
       <label for="pago_tarjeta">Tarjeta de crédito</label>
-      <div class="grupo_form_pago">
-
+      <div id="grupo_tarjeta" class="grupo_form_pago">
         <label for="numero_tarjeta"></label>
         <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="Número Tarjeta">
-
+        <div class="error js-tarjeta-error"></div>
         <label for="codigo_tarjeta"></label>
         <input type="text" id="codigo_tarjeta" name="codigo_tarjeta" placeholder="XXX">
-
+        <div class="error js-codigo-error"></div>
       </div>
 
       <input type="radio" id="pago_cupon" name="metodo_pago" value="cupon">
       <label for="pago_cupon">Cupón de pago</label>
-
-
-      <div class="check-label-wrapper">
-        <label for="pago_facil">Pago fácil</label>
-        <input type="checkbox" id="pago_facil" name="cupones" value="PagoFacil">
-
+      <div id="grupo_cupon">
+        <div class="check-label-wrapper">
+          <label for="pago_facil">Pago fácil</label>
+          <input type="checkbox" id="pago_facil" name="cupones" value="PagoFacil">
+        </div>
+        <div class="check-label-wrapper">
+          <label for="rapipago">RapiPago</label>
+          <input type="checkbox" id="rapipago" name="cupones" value="RapiPago">
+        </div>
       </div>
-
-      <div class="check-label-wrapper">
-        <label for="rapipago">RapiPago</label>
-        <input type="checkbox" id="rapipago" name="cupones" value="RapiPago">
-      </div>
-
 
 
       <div class="grupo_form_pago">

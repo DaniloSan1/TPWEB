@@ -42,7 +42,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       `input[name="metodo_pago"][value="${metodo}"]`
     );
     if (radio) radio.checked = true;
-
+    if (metodo === "tarjeta") {
+      const numero = usuarioActivo.numeroTarjeta || "";
+      numeroTarjetaInput.placeholder = "Tarjeta termina en: " + numero.slice(-4)
+    }
     if (metodo === "cupon" && usuarioActivo.cuponTipo) {
       const pagoFacil = document.getElementById("pago_facil");
       const rapipago = document.getElementById("rapipago");
@@ -126,6 +129,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       metodoPago: nuevoMetodoPago,
       codigoTarjeta: codigoTarjetaInput?.value.trim() || "",
       numeroTarjeta: numeroTarjetaInput?.value.trim() || "",
+      cuponTipo: nuevoMetodoPago === "cupon"
+    ? (document.getElementById("pago_facil").checked
+        ? "Pago Fácil"
+        : document.getElementById("rapipago").checked
+          ? "Rapipago"
+          : "")
+    : null
     };
 
     usuarios = usuarios.map((u) =>
@@ -220,4 +230,43 @@ document.addEventListener("DOMContentLoaded", async function () {
           e.target.parentElement.remove();
       }
   });
+
+  function setDisabled(grupo, disabled) {
+    grupo.querySelectorAll("input, select, button, textarea").forEach(i => i.disabled = disabled);
+  }
+
+  function gestionarMetodoPagoPerfil() {
+    const radioTarjeta = document.getElementById("pago_tarjeta");
+    const radioCupon = document.getElementById("pago_cupon");
+    const radioTransferencia = document.getElementById("pago_transferencia");
+    const grupoTarjeta = document.getElementById("grupo_tarjeta");
+    const grupoCupon = document.getElementById("grupo_cupon");
+
+    function actualizar() {
+      if (radioTarjeta.checked) {
+        setDisabled(grupoTarjeta, false);
+        setDisabled(grupoCupon, true);
+        document.getElementById("pago_facil").checked = false;
+        document.getElementById("rapipago").checked = false;
+      } else if (radioCupon.checked) {
+        setDisabled(grupoTarjeta, true);
+        setDisabled(grupoCupon, false);
+      } else if (radioTransferencia.checked) {
+        setDisabled(grupoTarjeta, true);
+        setDisabled(grupoCupon, true);
+        document.getElementById("pago_facil").checked = false;
+        document.getElementById("rapipago").checked = false;
+      } else {
+        setDisabled(grupoTarjeta, true);
+        setDisabled(grupoCupon, true);
+      }
+    }
+
+    radioTarjeta.addEventListener("change", actualizar);
+    radioCupon.addEventListener("change", actualizar);
+    radioTransferencia.addEventListener("change", actualizar);
+    actualizar();
+  }
+
+  gestionarMetodoPagoPerfil();
 });
