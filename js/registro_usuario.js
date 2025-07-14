@@ -191,7 +191,8 @@ formulario.addEventListener("submit", (e) => {
       contrasena: document.getElementById("contrasena").value.trim(),
       codigoTarjeta: document.getElementById("codigo_tarjeta").value.trim(),
       metodoPago: metodo,
-      cuponTipo: cuponTipo, 
+      cuponTipo: cuponTipo,
+      numeroTarjeta: document.getElementById("numero_tarjeta").value.trim(),
     };
 
     if (guardarUsuario(datos)) formulario.submit();
