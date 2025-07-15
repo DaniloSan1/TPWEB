@@ -121,6 +121,25 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     }
 
+    if (nuevoMetodoPago === "cupon") {
+      const pagoFacilChecked = document.getElementById("pago_facil").checked;
+      const rapipagoChecked = document.getElementById("rapipago").checked;
+      const grupoCupon = document.getElementById("grupo_cupon");
+      
+      let cuponError = grupoCupon.querySelector(".error");
+      if (!cuponError) {
+        cuponError = document.createElement("div");
+        cuponError.className = "error";
+        grupoCupon.appendChild(cuponError);
+      }
+      cuponError.textContent = "";
+
+      if ((pagoFacilChecked && rapipagoChecked) || (!pagoFacilChecked && !rapipagoChecked)) {
+        cuponError.textContent = "Debes seleccionar solo un cupón de pago.";
+        isFormValid = false;
+      }
+    }
+
     if (!isFormValid) return;
 
     const actualizado = {
